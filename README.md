@@ -1,6 +1,10 @@
 ▂▃▅▇ ))) ▇▅▃▂ Rian’s Evil Portals for Marauder ▂▃▅▇ ((( ▇▅▃▂
 ______________________________________________________________________________________________________________________________________________________________________________________________________
 🛜 A curated and maintained collection of 400+ ready-to-use captive portals built for the Marauder firmware — and compatible with any firmware that uses HTML-based captive portal structures. 
+
+<img width="1179" height="2152" alt="IMG_4473" src="https://github.com/user-attachments/assets/4bcce3d3-39b4-45ce-a2b7-2e5b1d74faef" />
+<img width="1179" height="2152" alt="IMG_4475" src="https://github.com/user-attachments/assets/c418a30f-5eb0-4b46-8b3f-bc5f934a1808" />
+<img width="1179" height="2168" alt="IMG_4474" src="https://github.com/user-attachments/assets/a5192763-f74a-436b-8e65-974afc86cda6" />
 ______________________________________________________________________________________________________________________________________________________________________________________________________
 ⚠️ WARNING: Only use these captive portals on networks you own or on networks where you have explicit permission to access and test.
 ______________________________________________________________________________________________________________________________________________________________________________________________________
