@@ -18,7 +18,7 @@ The HTML files must be located in the root directory of the Marauder's storage. 
 ______________________________________________________________________________________________________________________________________________________________________________________________________
 🌐 Captive Portals:
 
-This repository contains 400+ captive portals designed specifically designed for and around the Marauder firmware. (NOTE: Portals should work with any similar type of firmware, not just Marauder)
+This repository contains 400+ captive portals designed specifically for and around the Marauder firmware. (NOTE: Portals should work with any similar type of firmware, not just Marauder)
 
 All portals are provided as .html files.
 
