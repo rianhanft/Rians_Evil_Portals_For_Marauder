@@ -4,39 +4,39 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________________________
 📦 Installation:
 
-Download the captive portal .html file(s) you want to use.
+  Download the captive portal .html file(s) you want to use.
 
-Copy the HTML file(s) to the root directory of your Marauder's storage.
+  Copy the HTML file(s) to the root directory of your Marauder's storage.
 
-Do not place the files inside a separate folder.
+  Do not place the files inside a separate folder.
 
-Launch Marauder and select the captive portal you want to use.
+  Launch Marauder and select the captive portal you want to use.
 ______________________________________________________________________________________________________________________________________________________________________________________________________
 🚨 Important: 
 
-The HTML files must be located in the root directory of the Marauder's storage. If they are placed inside another folder, the portals may not work correctly.
+  The HTML files must be located in the root directory of the Marauder's storage. If they are placed inside another folder, the portals may not work correctly.
 ______________________________________________________________________________________________________________________________________________________________________________________________________
 🌐 Captive Portals:
 
-This repository contains 400+ captive portals designed specifically for and around the Marauder firmware. (NOTE: Portals should work with any similar type of firmware, not just Marauder)
+  This repository contains 400+ captive portals designed specifically for and around the Marauder firmware. (NOTE: Portals should work with any similar type of firmware, not       just Marauder)
 
-All portals are provided as .html files.
+  All portals are provided as .html files.
 
-If you have an idea for a captive portal you'd like to see added, feel free to reach out.
+  If you have an idea for a captive portal you'd like to see added, feel free to reach out.
 
-MAKE SURE TO CHECK THE UPDATE LOG CONSISTENTLY FOR ANY NEW RELEASES.
+  MAKE SURE TO CHECK THE UPDATE LOG CONSISTENTLY FOR ANY NEW RELEASES.
 ______________________________________________________________________________________________________________________________________________________________________________________________________
 💬 Contact:
 
-Discord: hitgrandmanotjuul
+  Discord: hitgrandmanotjuul
 
-If you encounter a problem with a captive portal or have questions/concerns about one of the files, let me know, and I'll do my best to get it resolved.
+  If you encounter a problem with a captive portal or have questions/concerns about one of the files, let me know, and I'll do my best to get it resolved.
 ______________________________________________________________________________________________________________________________________________________________________________________________________
 ⚠️ Responsible Use:
 
-These files are intended for authorized security testing, research, and educational purposes only.
+  These files are intended for authorized security testing, research, and educational purposes only.
 
-Only use them on your own network or on a network for which you have explicit permission to perform testing.
+  Only use them on your own network or on a network for which you have explicit permission to perform testing.
 ______________________________________________________________________________________________________________________________________________________________________________________________________
 EXAMPLES
 
