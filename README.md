@@ -1,11 +1,12 @@
+<img width="472" height="586" alt="Screenshot 2026-10-12 at 11 36 47 PM" src="https://github.com/user-attachments/assets/a572d775-fb07-4d13-817e-fd2a76cd4b88" />
 
-
-<img width="613" height="233" alt="Screenshot 2026-10-12 at 11 32 35 PM" src="https://github.com/user-attachments/assets/e65ce9ff-6861-4432-bced-7cccd5d71d12" />
-
+========================================================
 ______________________________________________________________________________________________________________________________________
-🛜 A curated and maintained collection of 400+ ready-to-use captive portals built for the Marauder firmware — and compatible with any firmware that uses HTML-based portal structures. This repo also features a new type of captive portal layout that doesn't look old and outdated, while also adding more advanced menu navigation and multiple ways a user can login. (NOTE: not all portals are made with full menu navigation, and the ones available are located in the folders labeled as "Advanced").
+🛜 **A curated and maintained collection of 400+ ready-to-use captive portals built for the Marauder firmware — and compatible with any firmware that uses HTML-based portal structures.**
+
+This repo also features a new type of captive portal layout that doesn't look old and outdated, while also adding more advanced menu navigation and multiple ways a user can login. (NOTE: not all portals are made with full menu navigation, and the ones available are located in the folders labeled as "Advanced").
 ______________________________________________________________________________________________________________________________________________________________________________________________________
-📦 Installation:
+📦 **Installation:**
 
   Download the captive portal .html file(s) you want to use.
 
@@ -15,11 +16,11 @@ ________________________________________________________________________________
 
   Launch Marauder and select the captive portal you want to use.
 ______________________________________________________________________________________________________________________________________________________________________________________________________
-🚨 Important: 
+🚨 **Important:** 
 
   The HTML files must be located in the root directory of the Marauder's storage. If they are placed inside another folder, the portals may not show up in the menu.
 ______________________________________________________________________________________________________________________________________________________________________________________________________
-🌐 Captive Portals:
+🌐 **Captive Portals:**
 
   This repository contains 400+ captive portals designed specifically for and around the Marauder firmware. (NOTE: Portals should work with any similar type of firmware, not       just Marauder)
 
@@ -29,19 +30,19 @@ ________________________________________________________________________________
 
   **MAKE SURE TO CHECK THE UPDATE LOG CONSISTENTLY FOR ANY NEW RELEASES.**
 ______________________________________________________________________________________________________________________________________________________________________________________________________
-💬 Contact:
+💬 **Contact:**
 
   Discord: hitgrandmanotjuul
 
   If you encounter a problem with a captive portal or have questions/concerns about one of the files, let me know, and I'll do my best to get it resolved.
 ______________________________________________________________________________________________________________________________________________________________________________________________________
-⚠️ Responsible Use:
+⚠️ **Responsible Use:**
 
   These files are intended for authorized security testing, research, and educational purposes only.
 
   Only use them on your own network or on a network for which you have explicit permission to perform testing.
 ______________________________________________________________________________________________________________________________________________________________________________________________________
-❗️EXAMPLES❗️
+❗️**EXAMPLES**❗️
 
 <img width="1179" height="2152" alt="IMG_4473" src="https://github.com/user-attachments/assets/4bcce3d3-39b4-45ce-a2b7-2e5b1d74faef" />
 
