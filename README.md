@@ -1,7 +1,6 @@
 
 <img width="2800" height="1000" alt="logo" src="https://github.com/user-attachments/assets/e7cbf1d6-b54f-428f-978c-c3ac70bed232" />
 
-========================================================
 ______________________________________________________________________________________________________________________________________
 🛜 **A curated and maintained collection of 400+ ready-to-use captive portals built for the Marauder firmware — and compatible with any firmware that uses HTML-based portal structures.**
 
