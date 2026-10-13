@@ -24,7 +24,7 @@ ________________________________________________________________________________
 
   If you have an idea for a captive portal you'd like to see added, feel free to reach out.
 
-  MAKE SURE TO CHECK THE UPDATE LOG CONSISTENTLY FOR ANY NEW RELEASES.
+  **MAKE SURE TO CHECK THE UPDATE LOG CONSISTENTLY FOR ANY NEW RELEASES.**
 ______________________________________________________________________________________________________________________________________________________________________________________________________
 💬 Contact:
 
