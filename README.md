@@ -1,16 +1,6 @@
 
-    ____  ___    _    _   _ ____
-   |  _ \|_ _|  / \  | \ | / ___|
-   | |_) || |  / _ \ |  \| \___ \
-   |  _ < | | / ___ \| |\  |___) |
-   |_| \_\___/_/   \_\_| \_|____/
+<img width="393" height="224" alt="Screenshot 2026-10-12 at 11 30 41 PM" src="https://github.com/user-attachments/assets/b0078383-d94d-4993-8868-4ef86c7511e5" />
 
-    ____   ___  ____ _____  _    _     ____
-   |  _ \ / _ \|  _ \_   _|/ \  | |   / ___|
-   | |_) | | | | |_) || | / _ \ | |   \___ \
-   |  __/| |_| |  _ < | |/ ___ \| |___ ___) |
-   |_|    \___/|_| \_\|_/_/   \_\_____|____/
-   
 ______________________________________________________________________________________________________________________________________
 🛜 A curated and maintained collection of 400+ ready-to-use captive portals built for the Marauder firmware — and compatible with any firmware that uses HTML-based portal structures. This repo also features a new type of captive portal layout that doesn't look old and outdated, while also adding more advanced menu navigation and multiple ways a user can login. (NOTE: not all portals are made with full menu navigation, and the ones available are located in the folders labeled as "Advanced").
 ______________________________________________________________________________________________________________________________________________________________________________________________________
