@@ -14,7 +14,7 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________________________
 🚨 Important: 
 
-  The HTML files must be located in the root directory of the Marauder's storage. If they are placed inside another folder, the portals may not work correctly.
+  The HTML files must be located in the root directory of the Marauder's storage. If they are placed inside another folder, the portals may not show up in the menu.
 ______________________________________________________________________________________________________________________________________________________________________________________________________
 🌐 Captive Portals:
 
