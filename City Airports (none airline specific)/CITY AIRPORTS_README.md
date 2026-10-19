@@ -1,5 +1,5 @@
 # Airport Captive Portals — README
-## Marauder Evil Portal Library
+## Marauder Airport Evil Portal Library
 
 ---
 
@@ -157,9 +157,5 @@ Exception: JFK has two portals — `airport-jfk.html` (all terminals) and
 | `airport-sea.html` | `SEA-FreeWiFi` |
 | `airport-mco.html` | `MCO-WiFi` |
 | `airport-las.html` | `LAS-AirportWiFi` |
-
-Each portal's SSID is already coded into the status bar — match your
-broadcast SSID to what's displayed in the portal for maximum authenticity.
-
 
 *For authorized penetration testing on networks you own or have explicit written permission to test.*
