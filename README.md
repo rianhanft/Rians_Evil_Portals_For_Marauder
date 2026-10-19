@@ -16,7 +16,7 @@ ________________________________________________________________________________
 
   Download the captive portal .html file(s) you want to use.
 
-  Copy the HTML file(s) to the root directory of your Marauder's (or similar firmware's) storage/SD card.
+  Paste the HTML file(s) to the root directory of your Marauder's (or similar firmware's) storage/SD card.
 
   Launch the device and select the .html captive portal file you want to use.
 ______________________________________________________________________________________________________________________________________________________________________________________________________
