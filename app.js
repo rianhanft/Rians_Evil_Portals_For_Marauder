@@ -8,6 +8,12 @@ const searchInput = document.getElementById("searchInput");
 const randomPortalBtn = document.getElementById("randomPortalBtn");
 const categoryTemplate = document.getElementById("categoryTemplate");
 
+const isPortalEntry = (item) => {
+  if (item.type !== "blob") return false;
+  if (!item.path.toLowerCase().endsWith(".html")) return false;
+  return item.path.split("/").pop().toLowerCase() !== "index.html";
+};
+
 const formatPortalName = (fileName) =>
   fileName
     .replace(/\.html$/i, "")
@@ -124,9 +130,7 @@ async function loadIndex() {
     }
 
     const data = await response.json();
-    const htmlEntries = (data.tree || []).filter(
-      (item) => item.type === "blob" && item.path.toLowerCase().endsWith(".html")
-    );
+    const htmlEntries = (data.tree || []).filter(isPortalEntry);
 
     const uniqueCategories = new Set(htmlEntries.map((entry) => getCategoryName(entry.path)));
     renderStats(uniqueCategories.size, htmlEntries.length);
@@ -148,9 +152,7 @@ searchInput.addEventListener("input", async () => {
       },
     });
     const data = await response.json();
-    const htmlEntries = (data.tree || []).filter(
-      (item) => item.type === "blob" && item.path.toLowerCase().endsWith(".html")
-    );
+    const htmlEntries = (data.tree || []).filter(isPortalEntry);
     renderCategories(filterEntries(htmlEntries, searchInput.value));
   } catch (error) {
     console.error(error);
@@ -166,9 +168,7 @@ randomPortalBtn.addEventListener("click", async () => {
       },
     });
     const data = await response.json();
-    const htmlEntries = (data.tree || []).filter(
-      (item) => item.type === "blob" && item.path.toLowerCase().endsWith(".html")
-    );
+    const htmlEntries = (data.tree || []).filter(isPortalEntry);
 
     if (!htmlEntries.length) return;
 
