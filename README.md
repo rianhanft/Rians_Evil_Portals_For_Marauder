@@ -16,6 +16,25 @@ This repo features new types of captive portals where the UI doesn't appear old 
 | No `method=` attribute   | ✅ All  |
 | No external dependencies | ✅ All  |
 | JavaScript-free forms    | ✅ All  |
+
+## Verified Format For most Advanced Captive Portals
+
+| Requirement                          | Status |
+|--------------------------------------|--------|
+| `action="/get"`                      | ✅     |
+| `name="email"`                       | ✅     |
+| `name="password"`                    | ✅     |
+| No `method=` attribute               | ✅     |
+| No external dependencies             | ✅     |
+| JavaScript-free forms                | ✅     |
+| Show/hide password (JS span toggle)  | ✅     |
+| 6 overlay types (Forgot/Google/Apple/Guest/Terms/Onboarding) | ✅ |
+| `recovery-attempt` hidden field      | ✅     |
+| Floating label inputs                | ✅     |
+| Pure CSS state machine (no JS tabs)  | ✅     |
+| Mobile viewport (`maximum-scale=1`)  | ✅     |
+| Marauder DOM (fixed inputs as direct `<body>` children) | ✅ |
+| Around 20 KB size limit              | ✅    |
 ______________________________________________________________________________________________________________________________________________________________________________________________________
 ⚠️ **Responsible Use:**
 
