@@ -1,10 +1,10 @@
 
 <img width="2800" height="1000" alt="logo" src="https://github.com/user-attachments/assets/e7cbf1d6-b54f-428f-978c-c3ac70bed232" />
 
-______________________________________________________________________________________________________________________________________
-🛜 **A curated and maintained collection of 400+ ready-to-use captive portals built for the Marauder firmware — and compatible with any firmware that uses HTML-based portal structures.**
+____________________________________________________________________________________________________________________________________________________________________________________________________
+🛜 **A curated and maintained collection of 500+ ready-to-use captive portals built for the Marauder firmware — and compatible with any firmware that uses HTML-based portal structures.**
 
-This repo features new types of captive portals where the UI doesn't appear old and/or outdated, while also adding more advanced menu navigation/multiple ways a "victim" can login. (NOTE: not all portals are made with full menu navigation, and the ones available are located in the folders labeled as "Advanced").
+This repo features new types of captive portals where the UI doesn't appear old and/or outdated, while also adding more advanced menu navigation/multiple ways a "victim" can login. (NOTE: not all p[...]
 
 ## Verified Format For Captive Portals
 
@@ -38,7 +38,7 @@ This repo features new types of captive portals where the UI doesn't appear old 
 ______________________________________________________________________________________________________________________________________________________________________________________________________
 ⚠️ **Responsible Use:**
 
-These files are provided strictly for authorized penetration testing, professional red team engagements, security research, and educational demonstrations. By downloading or using any file in this repository, you agree that you are solely responsible for ensuring your use complies with all applicable local, state, federal, and international laws — including but not limited to the Computer Fraud and Abuse Act (CFAA), the Electronic Communications Privacy Act (ECPA), and equivalent statutes in your jurisdiction.
+These files are provided strictly for authorized penetration testing, professional red team engagements, security research, and educational demonstrations. By downloading or using any file in this[...]
 
 Unauthorized use of these tools against networks, systems, or individuals without explicit written permission is illegal and unethical. The repository maintainer(s) assume no liability and expressly disclaim all responsibility for any misuse, damage, legal consequences, or harm arising from the use or distribution of these files. This includes but is not limited to unauthorized credential harvesting, network interference, or any activity conducted without the explicit consent of the network owner.
 
@@ -60,7 +60,7 @@ ________________________________________________________________________________
 
   **MAKE SURE TO CHECK THE UPDATE LOG CONSISTENTLY FOR ANY NEW  CAPTIVE PORTAL RELEASES.**
   
-  NOTE: This repository contains 400+ captive portals designed specifically for and around the Marauder firmware. (Portals should work with any similar type of firmware      that can read/launch captive .html files that are around 20 KB, though this hasn't been documented.)
+  NOTE: This repository contains 500+ captive portals designed specifically for and around the Marauder firmware. (Portals should work with any similar type of firmware      that can read/launch captive .html files that are around 20 KB, though this hasn't been documented.)
 
   All portals are provided as .html files.
 
@@ -79,7 +79,7 @@ ________________________________________________________________________________
 />
 
 
-<img width="1179" height="2152" alt="668229266-c418a30f-5eb0-4b46-8b3f-bc5f934a1808" src="https://github.com/user-attachments/assets/efd1ceda-75d2-44b6-af5d-1d2bac2197fc" />
+<img width="1179" height="2152" alt="668229266-c418a30f-5eb0-4b46-8b3f-bc5f934a1808" src="https://github.com/user-attachments/assets/efd1ceda-75d2-44b6-af5d-1d2bac217fc" />
 
 
 <img width="1179" height="2168" alt="668229203-a5192763-f74a-436b-8e65-974afc86cda6" src="https://github.com/user-attachments/assets/b7a62e2f-29d8-4cf0-b636-505bb9de76d3" />
