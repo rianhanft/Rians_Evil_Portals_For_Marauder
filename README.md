@@ -4,7 +4,7 @@
 ______________________________________________________________________________________________________________________________________
 🛜 **A curated and maintained collection of 400+ ready-to-use captive portals built for the Marauder firmware — and compatible with any firmware that uses HTML-based portal structures.**
 
-This repo also features new types of captive portals where the layout doesn't look old and outdated, while also adding more advanced menu navigation and multiple ways a user can login. (NOTE: not all portals are made with full menu navigation, and the ones available are located in the folders labeled as "Advanced").
+This repo also features new types of captive portals where the layout doesn't appear old (and/or) outdated, while also adding more advanced menu navigation/multiple ways a "victim" can login. (NOTE: not all portals are made with full menu navigation, and the ones available are located in the folders labeled as "Advanced").
 ______________________________________________________________________________________________________________________________________________________________________________________________________
 ⚠️ **Responsible Use:**
 
