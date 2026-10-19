@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A searchable GitHub Pages directory of captive portal HTML files from Rian's Evil Portals For Marauder."
+    />
+    <title>Portal Archive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">GitHub Pages archive</span>
+          <h1>Portal Archive</h1>
+          <p>
+            A browsable catalog of the HTML captive portal collection from
+            <a href="https://github.com/rianhanft/Rians_Evil_Portals_For_Marauder" target="_blank" rel="noreferrer">
+              rianhanft/Rians_Evil_Portals_For_Marauder
+            </a>
+          </p>
+        </div>
+        <div class="hero-actions">
+          <a class="primary" href="https://github.com/rianhanft/Rians_Evil_Portals_For_Marauder" target="_blank" rel="noreferrer">View repo</a>
+          <button id="randomPortalBtn" type="button" class="secondary">Random portal</button>
+        </div>
+      </header>
+
+      <section class="toolbar">
+        <label class="search-wrap" for="searchInput">
+          <span>Search portals</span>
+          <input id="searchInput" type="search" placeholder="Search by category or portal name..." />
+        </label>
+      </section>
+
+      <section id="stats" class="stats" aria-live="polite"></section>
+
+      <main id="categories" class="category-grid" aria-live="polite"></main>
+    </div>
+
+    <template id="categoryTemplate">
+      <article class="category-card">
+        <div class="category-header">
+          <h2 class="category-title"></h2>
+          <span class="chip"></span>
+        </div>
+        <ul class="portal-list"></ul>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
