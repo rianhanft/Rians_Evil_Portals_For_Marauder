@@ -60,7 +60,7 @@ ________________________________________________________________________________
 
   **MAKE SURE TO CHECK THE UPDATE LOG CONSISTENTLY FOR ANY NEW  CAPTIVE PORTAL RELEASES.**
   
-  NOTE: This repository contains 400+ captive portals designed specifically for and around the Marauder firmware. (Portals should work with any similar type of firmware      that can read/launch captive .html files that are 20 KB or less, though this hasn't been documented.)
+  NOTE: This repository contains 400+ captive portals designed specifically for and around the Marauder firmware. (Portals should work with any similar type of firmware      that can read/launch captive .html files that are around 20 KB, though this hasn't been documented.)
 
   All portals are provided as .html files.
 
