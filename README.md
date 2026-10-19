@@ -16,25 +16,23 @@ ________________________________________________________________________________
 
   Download the captive portal .html file(s) you want to use.
 
-  Copy the HTML file(s) to the root directory of your Marauder's storage.
+  Copy the HTML file(s) to the root directory of your Marauder's (or similar firmware's) storage/SD card.
 
-  Do not place the files inside a separate folder.
-
-  Launch Marauder and select the captive portal you want to use.
+  Launch the device and select the .html captive portal file you want to use.
 ______________________________________________________________________________________________________________________________________________________________________________________________________
 🚨 **Important:** 
 
-  The HTML files must be located in the root directory of the Marauder's storage. If they are placed inside another folder, the portals may not show up in the menu.
+  **The HTML files must be located in the root directory of the Marauder's storage. If they are placed inside another folder, the portals will not show up on your device's menu screen.**
 ______________________________________________________________________________________________________________________________________________________________________________________________________
 🌐 **Captive Portals:**
 
-  This repository contains 400+ captive portals designed specifically for and around the Marauder firmware. (NOTE: Portals should work with any similar type of firmware, not       just Marauder)
+  **MAKE SURE TO CHECK THE UPDATE LOG CONSISTENTLY FOR ANY NEW  CAPTIVE PORTAL RELEASES.**
+  
+  NOTE: This repository contains 400+ captive portals designed specifically for and around the Marauder firmware. (Portals should work with any similar type of firmware      that can read/launch captive .html files that are 20 KB or less, though this hasn't been documented.)
 
   All portals are provided as .html files.
 
   If you have an idea for a captive portal you'd like to see added, feel free to reach out.
-
-  **MAKE SURE TO CHECK THE UPDATE LOG CONSISTENTLY FOR ANY NEW RELEASES.**
 ______________________________________________________________________________________________________________________________________________________________________________________________________
 💬 **Contact:**
 
