@@ -1,9 +1,9 @@
-https://rianhanft.github.io/Rians_Evil_Portals_For_Marauder/
-
 <img width="2800" height="1000" alt="logo" src="https://github.com/user-attachments/assets/e7cbf1d6-b54f-428f-978c-c3ac70bed232" />
 
 ____________________________________________________________________________________________________________________________________________________________________________________________________
 🛜 **A curated and maintained collection of 500+ ready-to-use captive portals built for the Marauder firmware — and compatible with any firmware that uses HTML-based portal structures.**
+
+https://rianhanft.github.io/Rians_Evil_Portals_For_Marauder/
 
 This repo features new types of captive portals where the UI doesn't appear old and/or outdated, while also adding more advanced menu navigation/multiple ways a "victim" can login. (NOTE: not all p[...]
 
