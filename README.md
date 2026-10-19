@@ -6,6 +6,12 @@ ________________________________________________________________________________
 
 This repo also features new types of captive portals where the layout doesn't look old and outdated, while also adding more advanced menu navigation and multiple ways a user can login. (NOTE: not all portals are made with full menu navigation, and the ones available are located in the folders labeled as "Advanced").
 ______________________________________________________________________________________________________________________________________________________________________________________________________
+⚠️ **Responsible Use:**
+
+  These files are intended for authorized security testing, research, and educational purposes only.
+
+  Only use them on your own network or on a network for which you have explicit permission to perform testing.
+______________________________________________________________________________________________________________________________________________________________________________________________________
 📦 **Installation:**
 
   Download the captive portal .html file(s) you want to use.
@@ -35,12 +41,6 @@ ________________________________________________________________________________
   Discord: hitgrandmanotjuul
 
   If you encounter a problem with a captive portal or have questions/concerns about one of the files, let me know, and I'll do my best to get it resolved.
-______________________________________________________________________________________________________________________________________________________________________________________________________
-⚠️ **Responsible Use:**
-
-  These files are intended for authorized security testing, research, and educational purposes only.
-
-  Only use them on your own network or on a network for which you have explicit permission to perform testing.
 ______________________________________________________________________________________________________________________________________________________________________________________________________
 ❗️**EXAMPLES**❗️
 
