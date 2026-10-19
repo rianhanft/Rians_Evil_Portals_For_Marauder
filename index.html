@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="A searchable GitHub Pages directory of captive portal HTML files from Rian's Evil Portals For Marauder."
+      content="Rian's Evil Portals — a curated archive of over 400 captive portal HTML templates for Marauder and similar firmware."
     />
-    <title>Portal Archive</title>
+    <title>Rian's Evil Portals</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,41 +17,145 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
     <div class="page-shell">
-      <header class="hero">
-        <div class="hero-copy">
-          <span class="eyebrow">GitHub Pages archive</span>
-          <h1>Portal Archive</h1>
-          <p>
-            A browsable catalog of the HTML captive portal collection from
-            <a href="https://github.com/rianhanft/Rians_Evil_Portals_For_Marauder" target="_blank" rel="noreferrer">
-              rianhanft/Rians_Evil_Portals_For_Marauder
-            </a>
-          </p>
+      <header class="site-header">
+        <div class="brand-wrap">
+          <div class="brand-mark">R</div>
+          <div>
+            <div class="brand-name">Rian's Evil Portals</div>
+            <div class="brand-tag">HTML captive portal archive</div>
+          </div>
         </div>
-        <div class="hero-actions">
-          <a class="primary" href="https://github.com/rianhanft/Rians_Evil_Portals_For_Marauder" target="_blank" rel="noreferrer">View repo</a>
-          <button id="randomPortalBtn" type="button" class="secondary">Random portal</button>
-        </div>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="#featured">Featured</a>
+          <a href="#categories">Categories</a>
+          <a href="#repo">Repo</a>
+        </nav>
       </header>
 
-      <section class="toolbar">
-        <label class="search-wrap" for="searchInput">
-          <span>Search portals</span>
-          <input id="searchInput" type="search" placeholder="Search by category or portal name..." />
-        </label>
-      </section>
+      <main>
+        <section class="hero">
+          <div class="hero-copy">
+            <span class="eyebrow">Curated collection</span>
+            <h1>400+ captive portals for Marauder and similar firmware.</h1>
+            <p>
+              Built for fast browsing, easy categorization, and quick access to HTML portal files used in
+              wireless captive portal testing workflows.
+            </p>
+            <div class="hero-actions">
+              <a class="primary-btn" href="#categories">Browse archive</a>
+              <a class="secondary-btn" href="https://github.com/rianhanft/Rians_Evil_Portals_For_Marauder" target="_blank" rel="noreferrer">Open GitHub repo</a>
+            </div>
+            <ul class="hero-meta" aria-label="Portal highlights">
+              <li>400+ HTML portals</li>
+              <li>Multiple categories</li>
+              <li>Ready for Marauder</li>
+            </ul>
+          </div>
 
-      <section id="stats" class="stats" aria-live="polite"></section>
+          <div class="hero-visual" id="featured">
+            <div class="visual-frame">
+              <div class="window-bar">
+                <span></span><span></span><span></span>
+              </div>
+              <img
+                src="https://github.com/user-attachments/assets/e7cbf1d6-b54f-428f-978c-c3ac70bed232"
+                alt="Rian's Evil Portals header banner"
+              />
+            </div>
+          </div>
+        </section>
 
-      <main id="categories" class="category-grid" aria-live="polite"></main>
+        <section class="stats-panel" aria-label="Portal statistics">
+          <article class="stat-card">
+            <span class="label">Portal count</span>
+            <strong id="portalCount">Loading…</strong>
+          </article>
+          <article class="stat-card">
+            <span class="label">Categories</span>
+            <strong id="categoryCount">Loading…</strong>
+          </article>
+          <article class="stat-card">
+            <span class="label">Formats</span>
+            <strong>HTML</strong>
+          </article>
+        </section>
+
+        <section class="preview-showcase" aria-labelledby="preview-heading">
+          <div class="section-heading">
+            <span class="section-kicker">Preview</span>
+            <h2 id="preview-heading">What these portals look like</h2>
+          </div>
+
+          <div class="preview-grid">
+            <article class="preview-card">
+              <div class="preview-image-wrap">
+                <img
+                  src="https://github.com/user-attachments/assets/00fd0fe6-f734-433c-a4cb-307f24bccd29"
+                  alt="Example portal preview 1"
+                />
+              </div>
+              <div class="preview-copy">
+                <h3>Luxury hotel portal</h3>
+                <p>Modern captive portal layout with a polished login interface and layered overlays.</p>
+              </div>
+            </article>
+
+            <article class="preview-card">
+              <div class="preview-image-wrap">
+                <img
+                  src="https://github.com/user-attachments/assets/efd1ceda-75d2-44b6-af5d-1d2bac2197fc"
+                  alt="Example portal preview 2"
+                />
+              </div>
+              <div class="preview-copy">
+                <h3>Airport / airline portal</h3>
+                <p>Clean branding, higher-contrast form states, and mobile-friendly portal UI patterns.</p>
+              </div>
+            </article>
+
+            <article class="preview-card">
+              <div class="preview-image-wrap">
+                <img
+                  src="https://github.com/user-attachments/assets/b7a62e2f-29d8-4cf0-b636-505bb9de76d3"
+                  alt="Example portal preview 3"
+                />
+              </div>
+              <div class="preview-copy">
+                <h3>Retail / public Wi-Fi portal</h3>
+                <p>Designed to feel realistic while staying lightweight and compatible with HTML-based firmware.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="archive-panel">
+          <div class="toolbar">
+            <label for="searchInput" class="search-label">Search portals</label>
+            <div class="search-row">
+              <input id="searchInput" type="search" placeholder="Filter by category or portal name..." />
+              <button id="randomPortalBtn" type="button">Random portal</button>
+            </div>
+          </div>
+
+          <div id="categoryGrid" class="category-grid" aria-live="polite"></div>
+        </section>
+      </main>
+
+      <footer class="site-footer" id="repo">
+        <p>Rian's Evil Portals</p>
+        <a href="https://github.com/rianhanft/Rians_Evil_Portals_For_Marauder" target="_blank" rel="noreferrer">View repository</a>
+      </footer>
     </div>
 
     <template id="categoryTemplate">
       <article class="category-card">
         <div class="category-header">
-          <h2 class="category-title"></h2>
-          <span class="chip"></span>
+          <h3 class="category-name"></h3>
+          <span class="category-count"></span>
         </div>
         <ul class="portal-list"></ul>
       </article>

@@ -1,8 +1,9 @@
-const GITHUB_REPO = "rianhanft/Rians_Evil_Portals_For_Marauder";
-const treeUrl = `https://api.github.com/repos/${GITHUB_REPO}/git/trees/main?recursive=1`;
+const REPO = "rianhanft/Rians_Evil_Portals_For_Marauder";
+const API_URL = `https://api.github.com/repos/${REPO}/git/trees/main?recursive=1`;
 
-const statsNode = document.getElementById("stats");
-const categoriesNode = document.getElementById("categories");
+const portalCountNode = document.getElementById("portalCount");
+const categoryCountNode = document.getElementById("categoryCount");
+const categoryGridNode = document.getElementById("categoryGrid");
 const searchInput = document.getElementById("searchInput");
 const randomPortalBtn = document.getElementById("randomPortalBtn");
 const categoryTemplate = document.getElementById("categoryTemplate");
@@ -13,37 +14,23 @@ const formatPortalName = (fileName) =>
     .replace(/[-_]+/g, " ")
     .replace(/\b\w/g, (char) => char.toUpperCase());
 
-const renderStats = (totalCategories, totalPortals) => {
-  statsNode.innerHTML = `
-    <div class="stat">
-      <span class="stat-label">Categories</span>
-      <span class="stat-value">${totalCategories}</span>
-    </div>
-    <div class="stat">
-      <span class="stat-label">Portal files</span>
-      <span class="stat-value">${totalPortals}</span>
-    </div>
-    <div class="stat">
-      <span class="stat-label">Source repo</span>
-      <span class="stat-value">GitHub</span>
-    </div>
-  `;
+const buildPortalUrl = (path) => `https://github.com/${REPO}/blob/main/${encodeURIComponent(path)}`;
+
+const getCategoryName = (itemPath) => {
+  const category = itemPath.split("/")[0];
+  return category || "Root";
 };
 
-const buildPortalUrl = (path) => `https://github.com/${GITHUB_REPO}/blob/main/${encodeURIComponent(path)}`;
-
-const buildRawUrl = (path) => `https://raw.githubusercontent.com/${GITHUB_REPO}/main/${path}`;
-
-const getCategoryLabel = (path) => {
-  const folder = path.split("/")[0];
-  return folder || "Root";
+const renderStats = (categoryCount, portalCount) => {
+  portalCountNode.textContent = portalCount.toLocaleString();
+  categoryCountNode.textContent = categoryCount.toLocaleString();
 };
 
 const renderCategories = (entries) => {
   const groups = new Map();
 
   entries.forEach((entry) => {
-    const category = getCategoryLabel(entry.path);
+    const category = getCategoryName(entry.path);
     if (!groups.has(category)) {
       groups.set(category, []);
     }
@@ -52,61 +39,63 @@ const renderCategories = (entries) => {
 
   const sortedGroups = [...groups.entries()].sort(([a], [b]) => a.localeCompare(b));
 
+  categoryGridNode.innerHTML = "";
+
   if (!sortedGroups.length) {
-    categoriesNode.innerHTML = '<div class="empty-state">No portal files matched your search.</div>';
+    categoryGridNode.innerHTML = '<div class="category-card"><p style="margin:0;color:var(--muted);">No matching portals found.</p></div>';
     return;
   }
 
-  categoriesNode.innerHTML = "";
-
   sortedGroups.forEach(([category, items]) => {
     const card = categoryTemplate.content.firstElementChild.cloneNode(true);
-    const title = card.querySelector(".category-title");
-    const chip = card.querySelector(".chip");
-    const list = card.querySelector(".portal-list");
+    const nameNode = card.querySelector(".category-name");
+    const countNode = card.querySelector(".category-count");
+    const listNode = card.querySelector(".portal-list");
 
-    title.textContent = category;
-    chip.textContent = String(items.length);
+    nameNode.textContent = category;
+    countNode.textContent = String(items.length);
 
     const visibleItems = items
       .slice()
       .sort((a, b) => a.path.localeCompare(b.path))
-      .slice(0, 8);
+      .slice(0, 6);
 
     visibleItems.forEach((item) => {
+      const fileName = item.path.split("/").pop();
       const li = document.createElement("li");
       li.className = "portal-item";
 
-      const fileName = item.path.split("/").pop();
-      const itemName = formatPortalName(fileName);
       const link = document.createElement("a");
       link.href = buildPortalUrl(item.path);
       link.target = "_blank";
       link.rel = "noreferrer";
       link.innerHTML = `
-        <span class="portal-name">${itemName}</span>
+        <span class="portal-name">${formatPortalName(fileName)}</span>
         <span class="portal-meta">Open</span>
       `;
+
       li.appendChild(link);
-      list.appendChild(li);
+      listNode.appendChild(li);
     });
 
     if (items.length > visibleItems.length) {
       const li = document.createElement("li");
       li.className = "portal-item";
-      const more = document.createElement("a");
-      more.href = `https://github.com/${GITHUB_REPO}/tree/main/${encodeURIComponent(category)}`;
-      more.target = "_blank";
-      more.rel = "noreferrer";
-      more.innerHTML = `
-        <span class="portal-name">View all ${items.length} entries</span>
+
+      const link = document.createElement("a");
+      link.href = `https://github.com/${REPO}/tree/main/${encodeURIComponent(category)}`;
+      link.target = "_blank";
+      link.rel = "noreferrer";
+      link.innerHTML = `
+        <span class="portal-name">View all ${items.length}</span>
         <span class="portal-meta">Repo</span>
       `;
-      li.appendChild(more);
-      list.appendChild(li);
+
+      li.appendChild(link);
+      listNode.appendChild(li);
     }
 
-    categoriesNode.appendChild(card);
+    categoryGridNode.appendChild(card);
   });
 };
 
@@ -115,23 +104,23 @@ const filterEntries = (entries, query = "") => {
   if (!normalized) return entries;
 
   return entries.filter((entry) => {
-    const folder = entry.path.split("/")[0].toLowerCase();
-    const file = entry.path.split("/").pop().toLowerCase();
-    return folder.includes(normalized) || file.includes(normalized);
+    const category = getCategoryName(entry.path).toLowerCase();
+    const fileName = entry.path.split("/").pop().toLowerCase();
+    return category.includes(normalized) || fileName.includes(normalized);
   });
 };
 
-const loadPortalIndex = async () => {
+async function loadIndex() {
   try {
-    const response = await fetch(treeUrl, {
+    const response = await fetch(API_URL, {
       headers: {
         Accept: "application/vnd.github+json",
-        "User-Agent": "GitHubPages-PortalArchive",
+        "User-Agent": "RiansEvilPortalsSite",
       },
     });
 
     if (!response.ok) {
-      throw new Error(`GitHub API request failed: ${response.status}`);
+      throw new Error(`GitHub API failed: ${response.status}`);
     }
 
     const data = await response.json();
@@ -139,31 +128,23 @@ const loadPortalIndex = async () => {
       (item) => item.type === "blob" && item.path.toLowerCase().endsWith(".html")
     );
 
-    const allCategories = new Set(htmlEntries.map((entry) => getCategoryLabel(entry.path)));
-    renderStats(allCategories.size, htmlEntries.length);
+    const uniqueCategories = new Set(htmlEntries.map((entry) => getCategoryName(entry.path)));
+    renderStats(uniqueCategories.size, htmlEntries.length);
     renderCategories(filterEntries(htmlEntries, searchInput.value));
   } catch (error) {
-    statsNode.innerHTML = `
-      <div class="stat">
-        <span class="stat-label">Status</span>
-        <span class="stat-value">Error</span>
-      </div>
-    `;
-    categoriesNode.innerHTML = `
-      <div class="empty-state">
-        Unable to load the repository index. Please refresh or check the GitHub API response.
-      </div>
-    `;
+    portalCountNode.textContent = "Unavailable";
+    categoryCountNode.textContent = "Unavailable";
+    categoryGridNode.innerHTML = '<div class="category-card"><p style="margin:0;color:var(--muted);">The portal index could not be loaded. Refresh and try again.</p></div>';
     console.error(error);
   }
-};
+}
 
 searchInput.addEventListener("input", async () => {
   try {
-    const response = await fetch(treeUrl, {
+    const response = await fetch(API_URL, {
       headers: {
         Accept: "application/vnd.github+json",
-        "User-Agent": "GitHubPages-PortalArchive",
+        "User-Agent": "RiansEvilPortalsSite",
       },
     });
     const data = await response.json();
@@ -178,26 +159,24 @@ searchInput.addEventListener("input", async () => {
 
 randomPortalBtn.addEventListener("click", async () => {
   try {
-    const response = await fetch(treeUrl, {
+    const response = await fetch(API_URL, {
       headers: {
         Accept: "application/vnd.github+json",
-        "User-Agent": "GitHubPages-PortalArchive",
+        "User-Agent": "RiansEvilPortalsSite",
       },
     });
-
-    if (!response.ok) throw new Error("Unable to load random portal");
-
     const data = await response.json();
     const htmlEntries = (data.tree || []).filter(
       (item) => item.type === "blob" && item.path.toLowerCase().endsWith(".html")
     );
 
     if (!htmlEntries.length) return;
-    const random = htmlEntries[Math.floor(Math.random() * htmlEntries.length)];
-    window.open(buildPortalUrl(random.path), "_blank", "noopener,noreferrer");
+
+    const randomEntry = htmlEntries[Math.floor(Math.random() * htmlEntries.length)];
+    window.open(buildPortalUrl(randomEntry.path), "_blank", "noopener,noreferrer");
   } catch (error) {
     console.error(error);
   }
 });
 
-loadPortalIndex();
+loadIndex();
