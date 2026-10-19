@@ -6,7 +6,7 @@ ________________________________________________________________________________
 
 This repo features new types of captive portals where the UI doesn't appear old and/or outdated, while also adding more advanced menu navigation/multiple ways a "victim" can login. (NOTE: not all portals are made with full menu navigation, and the ones available are located in the folders labeled as "Advanced").
 
-## Verified Format (All 51 Files)
+## Verified Format For Captive Portals
 
 | Requirement              | Status  |
 |--------------------------|---------|
