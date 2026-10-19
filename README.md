@@ -17,7 +17,7 @@ This repo features new types of captive portals where the UI doesn't appear old 
 | No external dependencies | ✅ All  |
 | JavaScript-free forms    | ✅ All  |
 
-## Verified Format For most Advanced Captive Portals
+## Verified Format For Most Advanced Captive Portals
 
 | Requirement                          | Status |
 |--------------------------------------|--------|
