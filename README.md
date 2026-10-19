@@ -74,10 +74,10 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________________________________________________
 ❗️**EXAMPLES**❗️
 
-<img width="250" height="2152" alt="IMG_4473" src="https://github.com/user-attachments/assets/4bcce3d3-39b4-45ce-a2b7-2e5b1d74faef" />
+<img width="1000" height="1000" alt="IMG_4473" src="https://github.com/user-attachments/assets/4bcce3d3-39b4-45ce-a2b7-2e5b1d74faef" />
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<img width="250" height="2152" alt="IMG_4475" src="https://github.com/user-attachments/assets/c418a30f-5eb0-4b46-8b3f-bc5f934a1808" />
+<img width="1000" height="1000" alt="IMG_4475" src="https://github.com/user-attachments/assets/c418a30f-5eb0-4b46-8b3f-bc5f934a1808" />
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<img width="250" height="2168" alt="IMG_4474" src="https://github.com/user-attachments/assets/a5192763-f74a-436b-8e65-974afc86cda6" />
+<img width="1000" height="1000" alt="IMG_4474" src="https://github.com/user-attachments/assets/a5192763-f74a-436b-8e65-974afc86cda6" />
