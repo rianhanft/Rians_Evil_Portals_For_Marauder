@@ -3,6 +3,8 @@
 ____________________________________________________________________________________________________________________________________________________________________________________________________
 🛜 **A curated and maintained collection of 500+ ready-to-use captive portals built for the Marauder firmware — and compatible with any firmware that uses HTML-based portal structures.**
 
+PORTALS WONT WORK WITH NEWEST VERSION - CURRENT ISSUE WITH 1.19.0 MARAUDER FIRMWARE.
+
 **Evil Portal Website:**
 https://rianhanft.github.io/Rians_Evil_Portals_For_Marauder/
 
