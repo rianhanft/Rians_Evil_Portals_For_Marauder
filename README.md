@@ -5,7 +5,7 @@ ________________________________________________________________________________
 
 https://rianhanft.github.io/Rians_Evil_Portals_For_Marauder/
 
-This repo features new types of captive portals where the UI doesn't appear old and/or outdated, while also adding more advanced menu navigation/multiple ways a "victim" can login. (NOTE: not all p[...]
+This repo features new types of captive portals where the UI doesn't appear old and/or outdated, while also adding more advanced menu navigation/multiple ways a "victim" can login. (NOTE: not all portals have the same UI/advanced features.)
 
 ## Verified Format For Captive Portals
 
