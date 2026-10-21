@@ -245,28 +245,6 @@ a {
   box-shadow: var(--shadow);
 }
 
-.window-bar {
-  height: 32px;
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0 0.9rem;
-  background: rgba(255, 255, 255, 0.03);
-  border-bottom: 1px solid var(--line);
-}
-
-.window-bar span {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.85);
-}
-
-.window-bar span:nth-child(1) { background: #ff6d73; }
-.window-bar span:nth-child(2) { background: #f7c75d; }
-.window-bar span:nth-child(3) { background: #45d483; }
-
 .visual-frame img {
   width: 100%;
   height: auto;
