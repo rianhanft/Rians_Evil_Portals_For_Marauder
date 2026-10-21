@@ -21,6 +21,7 @@ const formatPortalName = (fileName) =>
     .replace(/\b\w/g, (char) => char.toUpperCase());
 
 const buildPortalUrl = (path) => `https://github.com/${REPO}/blob/main/${encodeURIComponent(path)}`;
+const buildPortalDownloadUrl = (path) => `https://raw.githubusercontent.com/${REPO}/main/${path.replace(/\\/g, "/")}`;
 
 const getCategoryName = (itemPath) => {
   const category = itemPath.split("/")[0];
@@ -72,12 +73,13 @@ const renderCategories = (entries) => {
       li.className = "portal-item";
 
       const link = document.createElement("a");
-      link.href = buildPortalUrl(item.path);
+      link.href = buildPortalDownloadUrl(item.path);
+      link.download = fileName;
       link.target = "_blank";
-      link.rel = "noreferrer";
+      link.rel = "noopener noreferrer";
       link.innerHTML = `
         <span class="portal-name">${formatPortalName(fileName)}</span>
-        <span class="portal-meta">Open</span>
+        <span class="portal-meta">Download</span>
       `;
 
       li.appendChild(link);
