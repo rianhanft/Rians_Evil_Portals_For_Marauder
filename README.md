@@ -41,11 +41,11 @@ This repo features new types of captive portals where the UI doesn't appear old 
 ____________________________________________________________________________________________________________________________________________________________________________________________________
 ⚠️ **Responsible Use:**
 
-These files are provided strictly for authorized penetration testing, professional red team engagements, security research, and educational demonstrations. By downloading or using any file in this[...]
+These files are provided strictly for authorized penetration testing, professional red team engagements, security research, and educational demonstrations. By downloading or using any file in this repository, you agree to use it only on systems and networks that you own or for which you have obtained explicit, documented authorization to test.
 
-Unauthorized use of these tools against networks, systems, or individuals without explicit written permission is illegal and unethical. The repository maintainer(s) assume no liability and express[...]
+Unauthorized use of these tools against networks, systems, or individuals without explicit written permission is illegal and unethical. The repository maintainer(s) assume no liability and expressly disclaim all responsibility for any misuse, damage, data loss, or legal consequences arising from the use or misuse of this software. All risk rests entirely with the end user.
 
-Use of this repository constitutes your acknowledgment that you have obtained all necessary authorizations prior to deployment, and that any testing is conducted in a controlled environment or und[...]
+Use of this repository constitutes your acknowledgment that you have obtained all necessary authorizations prior to deployment, and that any testing is conducted in a controlled environment or under a valid, written engagement agreement with the system owner. You are solely responsible for complying with all applicable local, state, federal, and international laws governing security testing and network access.
 ____________________________________________________________________________________________________________________________________________________________________________________________________
 📦 **Installation:**
 
