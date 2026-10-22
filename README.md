@@ -78,8 +78,7 @@ ________________________________________________________________________________
 ❗️**EXAMPLES**❗️
 
 
-<img width="1179" height="2152" alt="668229069-4bcce3d3-39b4-45ce-a2b7-2e5b1d74faef" src="https://github.com/user-attachments/assets/00fd0fe6-f734-433c-a4cb-307f24bccd29" 
-/>
+<img width="1179" height="2152" alt="668229069-4bcce3d3-39b4-45ce-a2b7-2e5b1d74faef" src="https://github.com/user-attachments/assets/00fd0fe6-f734-433c-a4cb-307f24bccd29" />
 
 
 <img width="1179" height="2152" alt="668229266-c418a30f-5eb0-4b46-8b3f-bc5f934a1808" src="https://github.com/user-attachments/assets/efd1ceda-75d2-44b6-af5d-1d2bac217fc" />
