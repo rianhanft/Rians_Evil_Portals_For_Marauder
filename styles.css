@@ -140,7 +140,7 @@ a {
 
 .hero {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2rem;
   align-items: center;
   padding: 2.25rem 0 1.5rem;
@@ -259,7 +259,7 @@ a {
 }
 
 .visual-frame {
-  width: min(100%, 540px);
+  width: min(100%, 620px);
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 18px;
@@ -326,7 +326,8 @@ a {
 
 .preview-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 300px));
+  justify-content: center;
   gap: 1.1rem;
 }
 
@@ -501,7 +502,7 @@ a {
   }
 
   .preview-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 300px);
   }
 }
 
