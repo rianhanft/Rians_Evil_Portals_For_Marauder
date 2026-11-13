@@ -1,17 +1,17 @@
 :root {
-  --bg-1: #050a16;
-  --bg-2: #0b1223;
-  --panel: rgba(11, 19, 34, 0.7);
-  --panel-strong: rgba(12, 19, 31, 0.88);
-  --panel-soft: rgba(19, 29, 47, 0.78);
-  --text: #edf7ff;
-  --muted: #9eb6d9;
-  --line: rgba(147, 171, 198, 0.18);
-  --cyan: #74e4ff;
-  --cyan-strong: #16b9ff;
-  --teal: #57f0cf;
-  --violet: #8868ff;
-  --pink: #ff75b6;
+  --bg-1: #020b0a;
+  --bg-2: #071714;
+  --panel: rgba(8, 24, 20, 0.78);
+  --panel-strong: rgba(8, 22, 18, 0.92);
+  --panel-soft: rgba(13, 35, 27, 0.82);
+  --text: #eafff5;
+  --muted: #9bb9aa;
+  --line: rgba(132, 203, 167, 0.2);
+  --cyan: #6df2c5;
+  --cyan-strong: #26d99e;
+  --teal: #b4f06b;
+  --violet: #43c98d;
+  --pink: #c8f58b;
   --shadow: 0 16px 40px rgba(0, 0, 0, 0.38);
 }
 
@@ -29,9 +29,9 @@ body {
   font-family: "Inter", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at 15% 15%, rgba(24, 185, 255, 0.2), transparent 22%),
-    radial-gradient(circle at 80% 0%, rgba(136, 104, 255, 0.17), transparent 28%),
-    linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 52%, #091728 100%);
+    radial-gradient(circle at 15% 15%, rgba(38, 217, 158, 0.2), transparent 22%),
+    radial-gradient(circle at 80% 0%, rgba(180, 240, 107, 0.12), transparent 28%),
+    linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 52%, #0a2118 100%);
 }
 
 img {
@@ -59,7 +59,7 @@ a {
   left: 6%;
   width: 240px;
   height: 240px;
-  background: rgba(24, 185, 255, 0.8);
+  background: rgba(38, 217, 158, 0.8);
 }
 
 .glow-two {
@@ -67,7 +67,7 @@ a {
   bottom: 10%;
   width: 260px;
   height: 260px;
-  background: rgba(136, 104, 255, 0.75);
+  background: rgba(180, 240, 107, 0.65);
 }
 
 .page-shell {
@@ -100,9 +100,9 @@ a {
   height: 42px;
   border-radius: 12px;
   background: linear-gradient(135deg, var(--cyan), var(--violet));
-  color: #051018;
+  color: #04120d;
   font-weight: 800;
-  box-shadow: 0 0 20px rgba(116, 228, 255, 0.35);
+  box-shadow: 0 0 20px rgba(109, 242, 197, 0.35);
 }
 
 .brand-name {
@@ -146,8 +146,8 @@ a {
   display: inline-flex;
   padding: 0.42rem 0.75rem;
   border-radius: 999px;
-  border: 1px solid rgba(116, 228, 255, 0.22);
-  background: rgba(24, 185, 255, 0.1);
+  border: 1px solid rgba(109, 242, 197, 0.24);
+  background: rgba(38, 217, 158, 0.1);
   color: var(--cyan);
   font-size: 0.74rem;
   letter-spacing: 0.12em;
@@ -196,9 +196,9 @@ a {
 #randomPortalBtn,
 .search-row button {
   background: linear-gradient(135deg, var(--cyan), var(--teal));
-  color: #06141d;
-  border-color: rgba(87, 240, 207, 0.38);
-  box-shadow: 0 8px 22px rgba(87, 240, 207, 0.22);
+  color: #04120d;
+  border-color: rgba(180, 240, 107, 0.38);
+  box-shadow: 0 8px 22px rgba(38, 217, 158, 0.2);
 }
 
 .secondary-btn {
@@ -238,7 +238,7 @@ a {
 
 .visual-frame {
   width: min(100%, 540px);
-  background: rgba(13, 20, 30, 0.72);
+  background: rgba(9, 25, 19, 0.82);
   border: 1px solid var(--line);
   border-radius: 22px;
   overflow: hidden;
@@ -260,7 +260,7 @@ a {
 }
 
 .stat-card {
-  background: rgba(11, 19, 34, 0.7);
+  background: rgba(8, 24, 20, 0.78);
   border: 1px solid var(--line);
   border-radius: 18px;
   padding: 1.1rem 1.2rem;
@@ -304,7 +304,7 @@ a {
 }
 
 .preview-card {
-  background: rgba(11, 19, 34, 0.72);
+  background: rgba(8, 24, 20, 0.8);
   border: 1px solid var(--line);
   border-radius: 18px;
   overflow: hidden;
@@ -357,7 +357,7 @@ a {
 .search-row input {
   flex: 1;
   border: 1px solid var(--line);
-  background: rgba(8, 16, 26, 0.78);
+  background: rgba(5, 17, 14, 0.88);
   color: var(--text);
   border-radius: 12px;
   padding: 0.9rem 1rem;
@@ -365,8 +365,8 @@ a {
 }
 
 .search-row input:focus {
-  border-color: rgba(116, 228, 255, 0.5);
-  box-shadow: 0 0 0 3px rgba(24, 185, 255, 0.12);
+  border-color: rgba(109, 242, 197, 0.55);
+  box-shadow: 0 0 0 3px rgba(38, 217, 158, 0.14);
 }
 
 .category-grid {
@@ -376,7 +376,7 @@ a {
 }
 
 .category-card {
-  background: rgba(11, 19, 34, 0.7);
+  background: rgba(8, 24, 20, 0.78);
   border: 1px solid var(--line);
   border-radius: 18px;
   padding: 1rem;
@@ -403,8 +403,8 @@ a {
   padding: 0.4rem 0.6rem;
   justify-content: center;
   border-radius: 999px;
-  background: rgba(87, 240, 207, 0.12);
-  border: 1px solid rgba(87, 240, 207, 0.2);
+  background: rgba(180, 240, 107, 0.1);
+  border: 1px solid rgba(180, 240, 107, 0.22);
   color: var(--teal);
   font-size: 0.76rem;
   font-weight: 700;
@@ -434,8 +434,8 @@ a {
 }
 
 .portal-item a:hover {
-  background: rgba(24, 185, 255, 0.05);
-  border-color: rgba(116, 228, 255, 0.2);
+  background: rgba(38, 217, 158, 0.07);
+  border-color: rgba(109, 242, 197, 0.24);
   transform: translateX(1px);
 }
 
