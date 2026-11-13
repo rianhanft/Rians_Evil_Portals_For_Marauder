@@ -152,7 +152,7 @@ a {
   align-items: center;
   gap: 0.5rem;
   padding: 0.42rem 0.75rem;
-  border-radius: 3px;
+  border-radius: 999px;
   border: 1px solid rgba(73, 207, 255, 0.28);
   background: rgba(3, 20, 25, 0.8);
   color: var(--cyan);
@@ -206,7 +206,7 @@ a {
   align-items: center;
   justify-content: center;
   padding: 0.9rem 1.2rem;
-  border-radius: 4px;
+  border-radius: 12px;
   border: 1px solid var(--line);
   text-decoration: none;
   font-weight: 700;
@@ -249,7 +249,7 @@ a {
 .hero-meta li {
   padding: 0.55rem 0.8rem;
   border: 1px solid var(--line);
-  border-radius: 3px;
+  border-radius: 999px;
   background: rgba(3, 17, 16, 0.8);
 }
 
@@ -262,7 +262,7 @@ a {
   width: min(100%, 540px);
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 4px;
+  border-radius: 18px;
   overflow: hidden;
   box-shadow: var(--shadow);
 }
@@ -283,7 +283,7 @@ a {
 .stat-card {
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 4px;
+  border-radius: 18px;
   padding: 1.1rem 1.2rem;
   box-shadow: var(--shadow);
 }
@@ -333,7 +333,7 @@ a {
 .preview-card {
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 4px;
+  border-radius: 18px;
   overflow: hidden;
   box-shadow: var(--shadow);
 }
@@ -386,7 +386,7 @@ a {
   border: 1px solid var(--line);
   background: rgba(2, 12, 12, 0.94);
   color: var(--text);
-  border-radius: 4px;
+  border-radius: 12px;
   padding: 0.9rem 1rem;
   outline: none;
 }
@@ -405,7 +405,7 @@ a {
 .category-card {
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 4px;
+  border-radius: 18px;
   padding: 1rem;
   box-shadow: var(--shadow);
 }
@@ -429,7 +429,7 @@ a {
   min-width: 2.2rem;
   padding: 0.4rem 0.6rem;
   justify-content: center;
-  border-radius: 3px;
+  border-radius: 999px;
   background: rgba(73, 207, 255, 0.08);
   border: 1px solid rgba(73, 207, 255, 0.25);
   color: var(--cyan);
@@ -453,7 +453,7 @@ a {
   gap: 0.9rem;
   width: 100%;
   padding: 0.7rem 0.85rem;
-  border-radius: 3px;
+  border-radius: 10px;
   border: 1px solid transparent;
   background: rgba(255, 255, 255, 0.02);
   color: var(--text);
