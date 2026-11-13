@@ -1,18 +1,14 @@
 :root {
-  --bg-1: #020b0a;
-  --bg-2: #071714;
-  --panel: rgba(8, 24, 20, 0.78);
-  --panel-strong: rgba(8, 22, 18, 0.92);
-  --panel-soft: rgba(13, 35, 27, 0.82);
-  --text: #eafff5;
-  --muted: #9bb9aa;
-  --line: rgba(132, 203, 167, 0.2);
-  --cyan: #6df2c5;
-  --cyan-strong: #26d99e;
-  --teal: #b4f06b;
-  --violet: #43c98d;
-  --pink: #c8f58b;
-  --shadow: 0 16px 40px rgba(0, 0, 0, 0.38);
+  --bg-1: #020a0b;
+  --bg-2: #03110f;
+  --panel: rgba(3, 17, 16, 0.94);
+  --text: #e5fff5;
+  --muted: #9cbeb5;
+  --line: rgba(72, 255, 187, 0.19);
+  --green: #4dffbb;
+  --cyan: #49cfff;
+  --red: #ff546b;
+  --shadow: 0 16px 40px rgba(0, 0, 0, 0.42);
 }
 
 * {
@@ -29,9 +25,13 @@ body {
   font-family: "Inter", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at 15% 15%, rgba(38, 217, 158, 0.2), transparent 22%),
-    radial-gradient(circle at 80% 0%, rgba(180, 240, 107, 0.12), transparent 28%),
-    linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 52%, #0a2118 100%);
+    repeating-linear-gradient(0deg, rgba(77, 255, 187, 0.025) 0 1px, transparent 1px 5px),
+    linear-gradient(rgba(77, 255, 187, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(77, 255, 187, 0.035) 1px, transparent 1px),
+    radial-gradient(ellipse at 30% 10%, rgba(18, 127, 91, 0.17), transparent 40%),
+    radial-gradient(ellipse at 85% 30%, rgba(21, 111, 145, 0.1), transparent 42%),
+    linear-gradient(135deg, var(--bg-1), var(--bg-2) 55%, #020b10);
+  background-size: auto, 64px 64px, 64px 64px, auto, auto, auto;
 }
 
 img {
@@ -59,7 +59,7 @@ a {
   left: 6%;
   width: 240px;
   height: 240px;
-  background: rgba(38, 217, 158, 0.8);
+  background: rgba(77, 255, 187, 0.5);
 }
 
 .glow-two {
@@ -67,7 +67,7 @@ a {
   bottom: 10%;
   width: 260px;
   height: 260px;
-  background: rgba(180, 240, 107, 0.65);
+  background: rgba(73, 207, 255, 0.35);
 }
 
 .page-shell {
@@ -98,16 +98,21 @@ a {
   justify-content: center;
   width: 42px;
   height: 42px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, var(--cyan), var(--violet));
-  color: #04120d;
+  border: 1px solid rgba(77, 255, 187, 0.7);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(77, 255, 187, 0.24), rgba(3, 17, 16, 0.95));
+  color: var(--green);
+  font-family: "Courier New", monospace;
   font-weight: 800;
-  box-shadow: 0 0 20px rgba(109, 242, 197, 0.35);
+  box-shadow: 0 0 20px rgba(77, 255, 187, 0.18), inset 0 0 12px rgba(77, 255, 187, 0.12);
 }
 
 .brand-name {
+  color: var(--green);
+  font-family: "Courier New", monospace;
   font-weight: 800;
-  letter-spacing: -0.04em;
+  letter-spacing: 0.02em;
+  text-shadow: 0 0 12px rgba(77, 255, 187, 0.35);
 }
 
 .brand-tag {
@@ -144,21 +149,38 @@ a {
 .eyebrow,
 .section-kicker {
   display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   padding: 0.42rem 0.75rem;
-  border-radius: 999px;
-  border: 1px solid rgba(109, 242, 197, 0.24);
-  background: rgba(38, 217, 158, 0.1);
+  border-radius: 3px;
+  border: 1px solid rgba(73, 207, 255, 0.28);
+  background: rgba(3, 20, 25, 0.8);
   color: var(--cyan);
+  font-family: "Courier New", monospace;
+  font-weight: 700;
   font-size: 0.74rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
+.eyebrow::before,
+.section-kicker::before {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 9px rgba(255, 84, 107, 0.7);
+}
+
 .hero-copy h1 {
   margin: 0.9rem 0 0.9rem;
-  font-size: clamp(2.8rem, 5vw, 5rem);
-  line-height: 0.96;
-  letter-spacing: -0.07em;
+  color: var(--green);
+  font-family: "Courier New", monospace;
+  font-size: clamp(2.6rem, 4.5vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+  text-shadow: 0 0 18px rgba(77, 255, 187, 0.25);
 }
 
 .hero-copy p {
@@ -184,7 +206,7 @@ a {
   align-items: center;
   justify-content: center;
   padding: 0.9rem 1.2rem;
-  border-radius: 12px;
+  border-radius: 4px;
   border: 1px solid var(--line);
   text-decoration: none;
   font-weight: 700;
@@ -195,10 +217,10 @@ a {
 .primary-btn,
 #randomPortalBtn,
 .search-row button {
-  background: linear-gradient(135deg, var(--cyan), var(--teal));
-  color: #04120d;
-  border-color: rgba(180, 240, 107, 0.38);
-  box-shadow: 0 8px 22px rgba(38, 217, 158, 0.2);
+  background: linear-gradient(135deg, var(--green), #35d7b8);
+  color: #02100c;
+  border-color: rgba(77, 255, 187, 0.65);
+  box-shadow: 0 0 20px rgba(77, 255, 187, 0.16);
 }
 
 .secondary-btn {
@@ -227,8 +249,8 @@ a {
 .hero-meta li {
   padding: 0.55rem 0.8rem;
   border: 1px solid var(--line);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.02);
+  border-radius: 3px;
+  background: rgba(3, 17, 16, 0.8);
 }
 
 .hero-visual {
@@ -238,9 +260,9 @@ a {
 
 .visual-frame {
   width: min(100%, 540px);
-  background: rgba(9, 25, 19, 0.82);
+  background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 22px;
+  border-radius: 4px;
   overflow: hidden;
   box-shadow: var(--shadow);
 }
@@ -248,8 +270,7 @@ a {
 .visual-frame img {
   width: 100%;
   height: auto;
-  border-bottom-left-radius: 22px;
-  border-bottom-right-radius: 22px;
+  border-radius: 0;
 }
 
 .stats-panel {
@@ -260,9 +281,9 @@ a {
 }
 
 .stat-card {
-  background: rgba(8, 24, 20, 0.78);
+  background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: 4px;
   padding: 1.1rem 1.2rem;
   box-shadow: var(--shadow);
 }
@@ -270,6 +291,7 @@ a {
 .stat-card .label {
   display: block;
   color: var(--muted);
+  font-family: "Courier New", monospace;
   font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -278,8 +300,10 @@ a {
 .stat-card strong {
   display: block;
   margin-top: 0.7rem;
+  color: var(--green);
+  font-family: "Courier New", monospace;
   font-size: clamp(1.5rem, 3vw, 2.2rem);
-  letter-spacing: -0.06em;
+  letter-spacing: -0.03em;
 }
 
 .preview-showcase,
@@ -293,8 +317,11 @@ a {
 
 .section-heading h2 {
   margin: 0.7rem 0 0;
+  color: var(--green);
+  font-family: "Courier New", monospace;
   font-size: clamp(1.8rem, 3vw, 2.6rem);
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
+  text-shadow: 0 0 16px rgba(77, 255, 187, 0.2);
 }
 
 .preview-grid {
@@ -304,9 +331,9 @@ a {
 }
 
 .preview-card {
-  background: rgba(8, 24, 20, 0.8);
+  background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: 4px;
   overflow: hidden;
   box-shadow: var(--shadow);
 }
@@ -357,16 +384,16 @@ a {
 .search-row input {
   flex: 1;
   border: 1px solid var(--line);
-  background: rgba(5, 17, 14, 0.88);
+  background: rgba(2, 12, 12, 0.94);
   color: var(--text);
-  border-radius: 12px;
+  border-radius: 4px;
   padding: 0.9rem 1rem;
   outline: none;
 }
 
 .search-row input:focus {
-  border-color: rgba(109, 242, 197, 0.55);
-  box-shadow: 0 0 0 3px rgba(38, 217, 158, 0.14);
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(73, 207, 255, 0.18);
 }
 
 .category-grid {
@@ -376,9 +403,9 @@ a {
 }
 
 .category-card {
-  background: rgba(8, 24, 20, 0.78);
+  background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: 4px;
   padding: 1rem;
   box-shadow: var(--shadow);
 }
@@ -402,10 +429,11 @@ a {
   min-width: 2.2rem;
   padding: 0.4rem 0.6rem;
   justify-content: center;
-  border-radius: 999px;
-  background: rgba(180, 240, 107, 0.1);
-  border: 1px solid rgba(180, 240, 107, 0.22);
-  color: var(--teal);
+  border-radius: 3px;
+  background: rgba(73, 207, 255, 0.08);
+  border: 1px solid rgba(73, 207, 255, 0.25);
+  color: var(--cyan);
+  font-family: "Courier New", monospace;
   font-size: 0.76rem;
   font-weight: 700;
 }
@@ -425,7 +453,7 @@ a {
   gap: 0.9rem;
   width: 100%;
   padding: 0.7rem 0.85rem;
-  border-radius: 10px;
+  border-radius: 3px;
   border: 1px solid transparent;
   background: rgba(255, 255, 255, 0.02);
   color: var(--text);
@@ -434,8 +462,8 @@ a {
 }
 
 .portal-item a:hover {
-  background: rgba(38, 217, 158, 0.07);
-  border-color: rgba(109, 242, 197, 0.24);
+  background: rgba(77, 255, 187, 0.06);
+  border-color: rgba(77, 255, 187, 0.3);
   transform: translateX(1px);
 }
 
@@ -449,7 +477,7 @@ a {
 }
 
 .portal-meta {
-  color: var(--muted);
+  color: var(--cyan);
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
