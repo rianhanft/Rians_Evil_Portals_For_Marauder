@@ -346,7 +346,7 @@ a {
 .preview-image-wrap img {
   width: 100%;
   height: 360px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .preview-copy {
