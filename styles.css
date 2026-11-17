@@ -522,7 +522,6 @@ select:focus-visible {
   font-size: 0.76rem;
 }
 
-.favorite-btn,
 .preview-btn {
   padding: 0.45rem;
   border: 0;
@@ -531,13 +530,6 @@ select:focus-visible {
   cursor: pointer;
 }
 
-.favorite-btn {
-  color: var(--green);
-  font-size: 1.6rem;
-  line-height: 1;
-}
-
-.favorite-btn:hover,
 .preview-btn:hover {
   color: var(--text);
 }
@@ -671,9 +663,14 @@ button:disabled {
 }
 
 @media (max-width: 620px) {
-  .site-header,
+  .site-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.9rem;
+    padding: 1rem;
+  }
+
   .site-footer,
-  .search-row,
   .project-callout {
     flex-direction: column;
     align-items: flex-start;
@@ -681,6 +678,12 @@ button:disabled {
 
   .site-nav {
     width: 100%;
+    justify-content: space-between;
+    gap: 0.6rem;
+  }
+
+  .search-row {
+    flex-wrap: wrap;
   }
 
   .search-row input,
@@ -688,9 +691,41 @@ button:disabled {
     width: 100%;
   }
 
+  .filter-row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.3rem;
+    margin-top: 0.8rem;
+  }
+
+  .filter-row .filter-btn {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .filter-row select {
+    flex: 0 0 auto;
+  }
+
+  .toolbar {
+    padding: 1rem;
+  }
+
   .archive-heading {
     align-items: flex-start;
     flex-direction: column;
+    gap: 0.5rem;
+    margin: 1.4rem 0 1rem;
+  }
+
+  .category-card {
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .preview-btn {
+    margin-left: auto;
   }
 
   .stats-panel {
@@ -701,3 +736,4 @@ button:disabled {
     font-size: clamp(2.4rem, 14vw, 4rem);
   }
 }
+

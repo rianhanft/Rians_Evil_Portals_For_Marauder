@@ -1,6 +1,5 @@
 const REPO = "rianhanft/Rians_Evil_Portals_For_Marauder";
 const API_URL = `https://api.github.com/repos/${REPO}/git/trees/main?recursive=1`;
-const FAVORITES_KEY = "rians-evil-portals-favorite-categories";
 
 const portalCountNode = document.getElementById("portalCount");
 const categoryCountNode = document.getElementById("categoryCount");
@@ -12,26 +11,12 @@ const quickPreview = document.getElementById("quickPreview");
 const finderStatus = document.getElementById("finderStatus");
 const categoryTemplate = document.getElementById("categoryTemplate");
 const filterButtons = document.querySelectorAll(".filter-btn");
-const savedLink = document.getElementById("savedLink");
 const randomPortalBtn = document.getElementById("randomPortalBtn");
 
 let entries = [];
 let currentFilter = "all";
 let selectedCategory = null;
-let savedOnly = false;
-let favorites = new Set();
 let indexLoaded = false;
-
-try {
-  const saved = JSON.parse(localStorage.getItem(FAVORITES_KEY) || "[]");
-  if (!Array.isArray(saved) || !saved.every((item) => typeof item === "string")) {
-    throw new Error("Invalid saved category data");
-  }
-  favorites = new Set(saved);
-} catch (error) {
-  finderStatus.textContent = "Saved categories could not be loaded from this browser.";
-  console.error("Could not load saved categories:", error);
-}
 
 const isPortalEntry = (item) =>
   item.type === "blob" &&
@@ -58,7 +43,7 @@ function getGroups() {
       (currentFilter === "airport" && /airport|airline/.test(name)) ||
       (currentFilter !== "airport" && name.includes(currentFilter));
     if (!matchesFilter || (categoryFilter.value && category !== categoryFilter.value) ||
-        (savedOnly && !favorites.has(category)) || (query && !name.includes(query) && !file.includes(query))) return;
+        (query && !name.includes(query) && !file.includes(query))) return;
     if (!groups.has(category)) groups.set(category, []);
     groups.get(category).push(entry);
   });
@@ -71,25 +56,7 @@ function getGroups() {
 function setFilter(filter) {
   currentFilter = filter;
   categoryFilter.value = "";
-  savedOnly = false;
   render();
-}
-
-function toggleFavorite(category) {
-  if (favorites.has(category)) favorites.delete(category);
-  else favorites.add(category);
-  try {
-    localStorage.setItem(FAVORITES_KEY, JSON.stringify([...favorites]));
-    finderStatus.textContent = favorites.has(category) ? `${category} saved in this browser.` : `${category} removed from saved categories.`;
-  } catch (error) {
-    finderStatus.textContent = "Could not save your selection in this browser. It will be lost when you leave.";
-    console.error("Could not save categories:", error);
-  }
-  render();
-  const updatedCard = [...categoryGridNode.querySelectorAll(".category-card")]
-    .find((card) => card.querySelector(".category-name").textContent === category);
-  if (updatedCard) updatedCard.querySelector(".favorite-btn").focus();
-  else savedLink.focus();
 }
 
 function renderPreview(category, items) {
@@ -128,20 +95,17 @@ function renderPreview(category, items) {
 
 function render() {
   filterButtons.forEach((button) => {
-    const active = !savedOnly && !categoryFilter.value && button.dataset.filter === currentFilter;
+    const active = !categoryFilter.value && button.dataset.filter === currentFilter;
     button.classList.toggle("active", active);
     button.setAttribute("aria-pressed", String(active));
   });
-  savedLink.classList.toggle("active", savedOnly);
   if (!indexLoaded) return;
   const groups = getGroups();
   categoryGridNode.replaceChildren();
   if (!groups.length) {
     const message = document.createElement("p");
     message.className = "empty-message";
-    message.textContent = savedOnly && !favorites.size
-      ? "No saved categories yet. Select a heart to save one."
-      : "No matching portals found. Try a different search or filter.";
+    message.textContent = "No matching portals found. Try a different search or filter.";
     categoryGridNode.append(message);
   }
   groups.forEach(([category, items]) => {
@@ -149,12 +113,6 @@ function render() {
     card.querySelector(".category-icon").textContent = category[0].toUpperCase();
     card.querySelector(".category-name").textContent = category;
     card.querySelector(".category-count").textContent = `${items.length} ${items.length === 1 ? "portal" : "portals"}`;
-    const favorite = card.querySelector(".favorite-btn");
-    const isFavorite = favorites.has(category);
-    favorite.textContent = isFavorite ? "♥" : "♡";
-    favorite.setAttribute("aria-label", `${isFavorite ? "Remove" : "Save"} ${category}${isFavorite ? " from saved categories" : ""}`);
-    favorite.setAttribute("aria-pressed", String(isFavorite));
-    favorite.addEventListener("click", () => toggleFavorite(category));
     const preview = card.querySelector(".preview-btn");
     preview.setAttribute("aria-label", `Preview ${category}`);
     preview.addEventListener("click", () => {
@@ -211,7 +169,6 @@ async function loadIndex() {
 filterButtons.forEach((button) => button.addEventListener("click", () => setFilter(button.dataset.filter)));
 categoryFilter.addEventListener("change", () => {
   currentFilter = "all";
-  savedOnly = false;
   render();
 });
 sortOrder.addEventListener("change", render);
@@ -228,13 +185,6 @@ document.getElementById("categoriesLink").addEventListener("click", () => {
 document.getElementById("discoverLink").addEventListener("click", () => {
   searchInput.value = "";
   setFilter("all");
-});
-savedLink.addEventListener("click", () => {
-  savedOnly = true;
-  currentFilter = "all";
-  categoryFilter.value = "";
-  searchInput.value = "";
-  render();
 });
 randomPortalBtn.addEventListener("click", () => {
   if (!entries.length) return;
