@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=4" />
+    <link rel="stylesheet" href="styles.css?v=5" />
   </head>
   <body>
     <div class="background-glow glow-one"></div>
@@ -28,17 +28,22 @@
             <div class="brand-name">Rian's Evil Portals</div>
             <div class="brand-tag">HTML captive portal archive</div>
           </div>
+          <nav class="site-nav" aria-label="Main navigation">
+            <a href="#discover" id="discoverLink">Discover</a>
+            <a href="#categories" id="categoriesLink">Categories</a>
+            <a href="#categories" id="savedLink">Saved categories ♡</a>
+            <a href="https://github.com/rianhanft/Rians_Evil_Portals_For_Marauder" target="_blank" rel="noreferrer">GitHub ↗</a>
+          </nav>
         </div>
       </header>
 
       <main>
-        <section class="hero">
+        <section class="hero" id="discover">
           <div class="hero-copy">
-            <span class="eyebrow">Curated collection</span>
-            <h1>500+ captive portals for Marauder and similar firmware.</h1>
+            <span class="eyebrow">Portal discovery</span>
+            <h1>Find the right portal, faster.</h1>
             <p>
-              Built for fast browsing, easy categorization, and quick access to HTML portal files used in
-              wireless captive portal testing workflows.
+              Browse 500+ captive portals for Marauder and similar firmware, with filters and a quick look at each category.
             </p>
             <div class="hero-actions">
               <a class="primary-btn" href="#categories">Browse archive</a>
@@ -58,6 +63,55 @@
                 alt="Rian's Evil Portals header banner"
               />
             </div>
+          </div>
+        </section>
+
+        <section class="archive-panel" id="categories" aria-labelledby="archiveHeading">
+          <div class="toolbar">
+            <form id="searchForm">
+              <label for="searchInput" class="search-label">Search portals</label>
+              <div class="search-row">
+                <input id="searchInput" type="search" placeholder="Search by category or portal name..." />
+                <button type="submit">Search archive</button>
+                <button id="randomPortalBtn" type="button" class="secondary-btn">Random portal</button>
+              </div>
+            </form>
+            <div class="filter-row" aria-label="Category filters">
+              <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All portals</button>
+              <button type="button" class="filter-btn" data-filter="airport" aria-pressed="false">Airports</button>
+              <button type="button" class="filter-btn" data-filter="hotel" aria-pressed="false">Hotels</button>
+              <button type="button" class="filter-btn" data-filter="restaurant" aria-pressed="false">Restaurants</button>
+              <button type="button" class="filter-btn" data-filter="coffee" aria-pressed="false">Coffee shops</button>
+              <label for="categoryFilter" class="visually-hidden">More category filters</label>
+              <select id="categoryFilter" aria-label="More category filters">
+                <option value="">More filters</option>
+              </select>
+            </div>
+            <p id="finderStatus" class="finder-status" role="status" aria-live="polite"></p>
+          </div>
+
+          <div class="archive-heading">
+            <div>
+              <span class="section-kicker">Explore the collection</span>
+              <h2 id="archiveHeading">Browse portals</h2>
+            </div>
+            <label for="sortOrder">Sort:
+              <select id="sortOrder">
+                <option value="asc">Name A–Z</option>
+                <option value="desc">Name Z–A</option>
+                <option value="count">Most portals</option>
+              </select>
+            </label>
+          </div>
+          <div class="finder-layout">
+            <div id="categoryGrid" class="category-grid" aria-live="polite"></div>
+            <aside class="quick-preview" aria-labelledby="quickPreviewHeading">
+              <span class="section-kicker">Quick preview</span>
+              <div id="quickPreview" aria-live="polite">
+                <h3 id="quickPreviewHeading">Choose a category</h3>
+                <p>Select Preview to see its portals here.</p>
+              </div>
+            </aside>
           </div>
         </section>
 
@@ -124,18 +178,6 @@
           </div>
         </section>
 
-        <section class="archive-panel" id="categories">
-          <div class="toolbar">
-            <label for="searchInput" class="search-label">Search portals</label>
-            <div class="search-row">
-              <input id="searchInput" type="search" placeholder="Filter by category or portal name..." />
-              <button id="randomPortalBtn" type="button">Random portal</button>
-            </div>
-          </div>
-
-          <div id="categoryGrid" class="category-grid" aria-live="polite"></div>
-        </section>
-
         <section class="project-callout" aria-labelledby="project-heading">
           <div>
             <span class="section-kicker">More from Rian</span>
@@ -154,14 +196,16 @@
 
     <template id="categoryTemplate">
       <article class="category-card">
-        <div class="category-header">
+        <span class="category-icon" aria-hidden="true"></span>
+        <div class="category-info">
           <h3 class="category-name"></h3>
           <span class="category-count"></span>
         </div>
-        <ul class="portal-list"></ul>
+        <button class="favorite-btn" type="button"></button>
+        <button class="preview-btn" type="button">Preview →</button>
       </article>
     </template>
 
-    <script src="app.js"></script>
+    <script src="app.js?v=5"></script>
   </body>
 </html>
