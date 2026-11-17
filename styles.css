@@ -1,10 +1,10 @@
 :root {
   --bg-1: #020a0b;
   --bg-2: #03110f;
-  --panel: rgba(3, 17, 16, 0.94);
+  --panel: rgba(4, 20, 23, 0.96);
   --text: #e5fff5;
   --muted: #9cbeb5;
-  --line: rgba(72, 255, 187, 0.19);
+  --line: rgba(73, 207, 255, 0.2);
   --green: #4dffbb;
   --cyan: #49cfff;
   --red: #ff546b;
@@ -25,13 +25,9 @@ body {
   font-family: "Inter", sans-serif;
   color: var(--text);
   background:
-    repeating-linear-gradient(0deg, rgba(77, 255, 187, 0.025) 0 1px, transparent 1px 5px),
-    linear-gradient(rgba(77, 255, 187, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(77, 255, 187, 0.035) 1px, transparent 1px),
-    radial-gradient(ellipse at 30% 10%, rgba(18, 127, 91, 0.17), transparent 40%),
-    radial-gradient(ellipse at 85% 30%, rgba(21, 111, 145, 0.1), transparent 42%),
-    linear-gradient(135deg, var(--bg-1), var(--bg-2) 55%, #020b10);
-  background-size: auto, 64px 64px, 64px 64px, auto, auto, auto;
+    radial-gradient(circle at 80% 8%, rgba(30, 149, 174, 0.22), transparent 30%),
+    radial-gradient(circle at 20% 20%, rgba(24, 184, 121, 0.15), transparent 35%),
+    #050f13;
 }
 
 img {
@@ -73,7 +69,7 @@ a {
 .page-shell {
   position: relative;
   z-index: 1;
-  width: min(1220px, calc(100% - 2rem));
+  width: min(1140px, calc(100% - 2rem));
   margin: 0 auto;
   padding: 1.5rem 0 3rem;
 }
@@ -83,7 +79,10 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.75rem 0 1.25rem;
+  padding: 1rem 1.4rem;
+  background: rgba(7, 25, 29, 0.9);
+  border: 1px solid var(--line);
+  border-radius: 18px;
 }
 
 .brand-wrap {
@@ -108,11 +107,8 @@ a {
 }
 
 .brand-name {
-  color: var(--green);
-  font-family: "Courier New", monospace;
+  color: var(--text);
   font-weight: 800;
-  letter-spacing: 0.02em;
-  text-shadow: 0 0 12px rgba(77, 255, 187, 0.35);
 }
 
 .brand-tag {
@@ -141,9 +137,9 @@ a {
 .hero {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2rem;
+  gap: 2.5rem;
   align-items: center;
-  padding: 2.25rem 0 1.5rem;
+  padding: 3rem 0 2rem;
 }
 
 .eyebrow,
@@ -153,8 +149,8 @@ a {
   gap: 0.5rem;
   padding: 0.42rem 0.75rem;
   border-radius: 999px;
-  border: 1px solid rgba(73, 207, 255, 0.28);
-  background: rgba(3, 20, 25, 0.8);
+  border: 1px solid rgba(73, 207, 255, 0.35);
+  background: rgba(73, 207, 255, 0.1);
   color: var(--cyan);
   font-family: "Courier New", monospace;
   font-weight: 700;
@@ -175,19 +171,17 @@ a {
 
 .hero-copy h1 {
   margin: 0.9rem 0 0.9rem;
-  color: var(--green);
-  font-family: "Courier New", monospace;
-  font-size: clamp(2.6rem, 4.5vw, 4.5rem);
-  line-height: 1.05;
+  color: var(--text);
+  font-size: clamp(2.6rem, 4.2vw, 4rem);
+  line-height: 1.04;
   letter-spacing: -0.05em;
-  text-shadow: 0 0 18px rgba(77, 255, 187, 0.25);
 }
 
 .hero-copy p {
   margin: 0;
   max-width: 62ch;
   color: var(--muted);
-  font-size: 1.08rem;
+  font-size: 1rem;
   line-height: 1.7;
 }
 
@@ -217,7 +211,7 @@ a {
 .primary-btn,
 #randomPortalBtn,
 .search-row button {
-  background: linear-gradient(135deg, var(--green), #35d7b8);
+  background: linear-gradient(120deg, var(--green), var(--cyan));
   color: #02100c;
   border-color: rgba(77, 255, 187, 0.65);
   box-shadow: 0 0 20px rgba(77, 255, 187, 0.16);
@@ -250,7 +244,7 @@ a {
   padding: 0.55rem 0.8rem;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(3, 17, 16, 0.8);
+  background: rgba(73, 207, 255, 0.06);
 }
 
 .hero-visual {
@@ -261,10 +255,10 @@ a {
 .visual-frame {
   width: min(100%, 620px);
   background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 18px;
+  border: 1px solid rgba(73, 207, 255, 0.35);
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: var(--shadow);
+  box-shadow: 0 12px 50px rgba(0, 0, 0, 0.4), 0 0 35px rgba(73, 207, 255, 0.1);
 }
 
 .visual-frame img {
@@ -281,9 +275,9 @@ a {
 }
 
 .stat-card {
-  background: var(--panel);
+  background: linear-gradient(145deg, rgba(13, 40, 43, 0.96), var(--panel));
   border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: 24px;
   padding: 1.1rem 1.2rem;
   box-shadow: var(--shadow);
 }
@@ -301,7 +295,6 @@ a {
   display: block;
   margin-top: 0.7rem;
   color: var(--green);
-  font-family: "Courier New", monospace;
   font-size: clamp(1.5rem, 3vw, 2.2rem);
   letter-spacing: -0.03em;
 }
@@ -317,11 +310,9 @@ a {
 
 .section-heading h2 {
   margin: 0.7rem 0 0;
-  color: var(--green);
-  font-family: "Courier New", monospace;
+  color: var(--text);
   font-size: clamp(1.8rem, 3vw, 2.6rem);
   letter-spacing: -0.03em;
-  text-shadow: 0 0 16px rgba(77, 255, 187, 0.2);
 }
 
 .preview-grid {
