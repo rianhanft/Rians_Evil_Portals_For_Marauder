@@ -476,6 +476,33 @@ a {
   letter-spacing: 0.06em;
 }
 
+.project-callout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(13, 40, 43, 0.96), var(--panel));
+  box-shadow: var(--shadow);
+}
+
+.project-callout h2 {
+  margin: 0.75rem 0 0.4rem;
+}
+
+.project-callout p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.project-callout a {
+  flex-shrink: 0;
+}
+
 .site-footer {
   display: flex;
   align-items: center;
@@ -500,7 +527,8 @@ a {
 @media (max-width: 620px) {
   .site-header,
   .site-footer,
-  .search-row {
+  .search-row,
+  .project-callout {
     flex-direction: column;
     align-items: flex-start;
   }
